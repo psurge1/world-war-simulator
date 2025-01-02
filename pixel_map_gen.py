@@ -129,6 +129,8 @@ def save_map(json_path: str, pixel_width: int, save_path: str, extension: str = 
 
 if __name__ == '__main__':
     save_map("assets/maps_4.json", 4, "map_4_pixwidth_4")
+    save_map("assets/maps_3.json", 4, "map_3_pixwidth_4")
+    save_map("assets/maps_3.json", 3, "map_3_pixwidth_3")
     save_map("assets/maps_2.json", 4, "map_2_pixwidth_4")
     save_map("assets/maps_2.json", 3, "map_2_pixwidth_3")
     save_map("assets/maps_2.json", 2, "map_2_pixwidth_2")
