@@ -1,0 +1,54 @@
+War Game
+
+A game where several countries fight eachother. 
+Each country has an army. 
+A country is defeated if all provinces have been captured.
+A country can only fight if at war.
+A country can develop its army, navy, and airforce.
+Countries can only develop their navy if they have access to a coastline.
+
+
+
+Game
+- Countries
+- Country Borders
+
+// Countries that can fight eachother
+Country
+- Capitol City
+- Population
+- Provinces
+- Army
+- Navy
+- Airforce
+
+
+// Provinces are sub sections of each country that can be conquered
+Province
+- Population
+- Major City/Cities
+- Unrest
+- Parent Country?
+
+
+Military Unit
+- Troops
+
+Army -> Military Unit
+- Troops
+
+Navy -> Military Unit
+- Troops
+
+Airforce -> Military Unit
+- Troops
+
+Troops
+- Health
+- Damage
+- Speed
+- etc. (other attributes are troop specific)
+
+Infantry -> Troops
+Bomber -> Troops
+Frigate -> Troops

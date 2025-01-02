@@ -1,0 +1,5179 @@
+{
+    "settings": {
+      "editor": {
+        "themeTags": [
+          "dark"
+        ],
+        "userData": {
+          "projection": "geoMercator",
+          "geodata": "worldLow"
+        },
+        "pixelFillOpacity": 0.8,
+        "pixelStroke": {
+          "type": "Color",
+          "value": "#1a1a1a"
+        },
+        "pixelStrokeWidth": 0.5,
+        "pixelStrokeOpacity": 1,
+        "fillColor": {
+          "type": "Color",
+          "value": "#879c39"
+        },
+        "pixelHorizontalGap": 0,
+        "pixelVerticalGap": 0,
+        "pixelType": "Rectangle",
+        "pixelSize": 25,
+        "pixelSvgPath": ""
+      },
+      "editor.map": {
+        "minZoomLevel": 0.8,
+        "projection": "geoMercator",
+        "panX": "rotateX",
+        "zoomControl": {
+          "type": "ZoomControl",
+          "settings": {
+            "visible": true,
+            "position": "absolute",
+            "layout": {
+              "type": "VerticalLayout"
+            },
+            "themeTags": [
+              "zoomtools"
+            ],
+            "layer": 30,
+            "forceHidden": false
+          }
+        },
+        "background": {
+          "type": "Rectangle",
+          "settings": {
+            "fill": {
+              "type": "Color",
+              "value": "#1a1a1a"
+            },
+            "fillOpacity": 1,
+            "width": 1536,
+            "height": 791,
+            "x": 0,
+            "y": 0,
+            "fillPattern": {
+              "type": "GrainPattern",
+              "settings": {
+                "maxOpacity": 0.08,
+                "density": 0.2,
+                "colors": [
+                  {
+                    "type": "Color",
+                    "value": "#aaaaaa"
+                  }
+                ]
+              }
+            },
+            "isMeasured": false
+          }
+        },
+        "themeTags": [
+          "map"
+        ],
+        "translateX": 768,
+        "translateY": 562.6835845343468
+      },
+      "editor.pointTemplate": {
+        "toggleKey": "active",
+        "centerX": {
+          "type": "Percent",
+          "value": 50
+        },
+        "centerY": {
+          "type": "Percent",
+          "value": 50
+        },
+        "tooltipText": "{name}"
+      },
+      "editor.bubbleTemplate": {
+        "toggleKey": "active",
+        "tooltipText": "{name}: {value}",
+        "fill": {
+          "type": "Color",
+          "value": "#e03f35"
+        },
+        "fillOpacity": 0.7019607843137254,
+        "stroke": {
+          "type": "Color",
+          "value": "#000000"
+        },
+        "strokeOpacity": 0.5019607843137255,
+        "strokeWidth": 0.5,
+        "userData": {
+          "bubbleMinSize": 3,
+          "bubbleMaxSize": 50,
+          "pointType": "Circle",
+          "point1": {
+            "longitude": 0,
+            "latitude": 43.998923312585504
+          },
+          "point2": {
+            "longitude": 14.683082031105682,
+            "latitude": 43.998923312585504
+          }
+        }
+      },
+      "editor.pixelTemplate": {
+        "tooltipText": "{name}",
+        "toggleKey": "active",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "fillOpacity": 0.8,
+        "strokeOpacity": 1,
+        "strokeWidth": 0.5,
+        "stroke": {
+          "type": "Color",
+          "value": "#1a1a1a"
+        },
+        "userData": {
+          "point1": {
+            "longitude": 0,
+            "latitude": 43.998923312585504
+          },
+          "point2": {
+            "longitude": 7.341541015552841,
+            "latitude": 43.998923312585504
+          }
+        }
+      },
+      "editor.linePointTemplate": {
+        "toggleKey": "active",
+        "centerX": {
+          "type": "Percent",
+          "value": 50
+        },
+        "centerY": {
+          "type": "Percent",
+          "value": 50
+        },
+        "tooltipText": "{name}"
+      },
+      "editor.labelTemplate": {
+        "toggleKey": "active",
+        "tooltipText": "{name}"
+      },
+      "editor.polygonSeries": {
+        "valueField": "value",
+        "calculateAggregates": true,
+        "id": "polygonseries",
+        "exclude": [
+          "AQ"
+        ],
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id",
+        "forceHidden": true
+      },
+      "editor.lineSeries": {
+        "layer": 30,
+        "id": "lineseries",
+        "lineTypeField": "lineType",
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id",
+        "visible": true,
+        "opacity": 1
+      },
+      "editor.pointSeries": {
+        "fixedField": "fixed",
+        "id": "pointseries",
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id",
+        "visible": true,
+        "opacity": 1
+      },
+      "editor.labelSeries": {
+        "fixedField": "fixed",
+        "id": "labelseries",
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id",
+        "visible": true,
+        "opacity": 1
+      },
+      "editor.bubbleSeries": {
+        "calculateAggregates": true,
+        "valueField": "value",
+        "polygonIdField": "id",
+        "id": "bubbleseries",
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id",
+        "visible": true,
+        "opacity": 1
+      },
+      "editor.gridSeries": {
+        "themeTags": [
+          "grid"
+        ],
+        "affectsBounds": false,
+        "lineTypeField": "lineType",
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id",
+        "clipExtent": true
+      },
+      "editor.backgroundSeries": {
+        "visible": false,
+        "themeTags": [
+          "polygon",
+          "background"
+        ],
+        "affectsBounds": false,
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.backgroundSeries.mapPolygons.template": {
+        "forceInactive": true,
+        "fill": {
+          "type": "Color",
+          "value": "#222222"
+        },
+        "stroke": {
+          "type": "Color",
+          "value": "#222222"
+        }
+      },
+      "editor.gridSeries.mapLines.template": {
+        "forceInactive": true,
+        "stroke": {
+          "type": "Color",
+          "value": "#ffffff"
+        },
+        "strokeOpacity": 0.04
+      },
+      "editor.pixelCountrySeries.GL": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Greenland",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.CA": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Canada",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.RU": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Russia",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.SJ": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Svalbard and Jan Mayen",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.US": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "United States",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.NO": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Norway",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.SE": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Sweden",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.FI": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Finland",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.IS": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Iceland",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.GB": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "United Kingdom",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.DK": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Denmark",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.LV": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Latvia",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.DE": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Germany",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.PL": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Poland",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.BY": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Belarus",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.KZ": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Kazakhstan",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.FR": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "France",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.AT": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Austria",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.UA": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Ukraine",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.MN": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Mongolia",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.CN": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "China",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.ES": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Spain",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.BG": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Bulgaria",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.UZ": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Uzbekistan",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.KG": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Kyrgyzstan",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.JP": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Japan",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.TN": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Tunisia",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.TR": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Türkiye",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.IR": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Iran",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.TM": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Turkmenistan",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.TJ": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Tajikistan",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.KR": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "South Korea",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.MX": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Mexico",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.MA": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Morocco",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.DZ": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Algeria",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.LY": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Libya",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.EG": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Egypt",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.SA": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Saudi Arabia",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.IQ": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Iraq",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.PK": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Pakistan",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.IN": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "India",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.EH": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Western Sahara",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.ML": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Mali",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.BD": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Bangladesh",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.MR": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Mauritania",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.NE": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Niger",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.TD": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Chad",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.SD": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Sudan",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.OM": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Oman",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.MM": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Myanmar",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.LA": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Lao People's Democratic Republic",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.CR": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Costa Rica",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.VE": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Venezuela",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.GN": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Guinea",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.BF": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Burkina Faso",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.BJ": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Benin",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.NG": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Nigeria",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.ET": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Ethiopia",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.SO": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Somalia",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.KH": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Cambodia",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.CO": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Colombia",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.BR": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Brazil",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.SR": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Suriname",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.CM": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Cameroon",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.CG": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Republic of Congo",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.CD": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Democratic Republic of Congo",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.UG": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Uganda",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.KE": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Kenya",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.ID": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Indonesia",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.EC": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Ecuador",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.PE": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Peru",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.TZ": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Tanzania",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.PG": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Papua New Guinea",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.AO": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Angola",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.ZM": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Zambia",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.MZ": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Mozambique",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.AU": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Australia",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.BO": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Bolivia",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.NA": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Namibia",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.BW": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Botswana",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.ZW": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Zimbabwe",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.MG": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Madagascar",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.AR": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Argentina",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.PY": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Paraguay",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.ZA": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "South Africa",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.CL": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Chile",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.UY": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "Uruguay",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      },
+      "editor.pixelCountrySeries.NZ": {
+        "longitudeField": "longitude",
+        "latitudeField": "latitude",
+        "autoScale": true,
+        "name": "New Zealand",
+        "fill": {
+          "type": "Color",
+          "value": "#333333"
+        },
+        "geometryField": "geometry",
+        "geometryTypeField": "geometryType",
+        "idField": "id"
+      }
+    },
+    "data": {
+      "editor.polygonSeries": [
+        {
+          "id": "TV",
+          "value": 4726,
+          "name": "Tuvalu",
+          "pointType": "Circle"
+        },
+        {
+          "id": "BV",
+          "value": 9525,
+          "name": "Bouvet Island",
+          "pointType": "Circle"
+        },
+        {
+          "id": "GI",
+          "value": 6657,
+          "name": "Gibraltar",
+          "pointType": "Circle"
+        },
+        {
+          "id": "GO",
+          "value": 7009,
+          "name": "Glorioso Islands",
+          "pointType": "Circle"
+        },
+        {
+          "id": "JU",
+          "value": 324,
+          "name": "Juan De Nova Island",
+          "pointType": "Circle"
+        },
+        {
+          "id": "UM-DQ",
+          "value": 5827,
+          "name": "Jarvis Island",
+          "pointType": "Circle"
+        },
+        {
+          "id": "UM-FQ",
+          "value": 6247,
+          "name": "Baker Island",
+          "pointType": "Circle"
+        },
+        {
+          "id": "UM-HQ",
+          "value": 3275,
+          "name": "Howland Island",
+          "pointType": "Circle"
+        },
+        {
+          "id": "UM-JQ",
+          "value": 3646,
+          "name": "Johnston Atoll",
+          "pointType": "Circle"
+        },
+        {
+          "id": "UM-MQ",
+          "value": 795,
+          "name": "Midway Islands",
+          "pointType": "Circle"
+        },
+        {
+          "id": "UM-WQ",
+          "value": 4795,
+          "name": "Wake Island",
+          "pointType": "Circle"
+        },
+        {
+          "id": "BQ",
+          "value": 6759,
+          "name": "Bonair, Saint Eustachius and Saba",
+          "pointType": "Circle"
+        },
+        {
+          "id": "NL",
+          "value": 8919,
+          "name": "Netherlands",
+          "pointType": "Circle"
+        },
+        {
+          "id": "ZW",
+          "value": 7059,
+          "name": "Zimbabwe",
+          "pointType": "Circle"
+        },
+        {
+          "id": "ZM",
+          "value": 5068,
+          "name": "Zambia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "ZA",
+          "value": 6103,
+          "name": "South Africa",
+          "pointType": "Circle"
+        },
+        {
+          "id": "YE",
+          "value": 2467,
+          "name": "Yemen",
+          "pointType": "Circle"
+        },
+        {
+          "id": "WS",
+          "value": 7565,
+          "name": "Samoa",
+          "pointType": "Circle"
+        },
+        {
+          "id": "WF",
+          "value": 8762,
+          "name": "Wallis and Futuna",
+          "pointType": "Circle"
+        },
+        {
+          "id": "PS",
+          "value": 6220,
+          "name": "Palestinian Territories",
+          "pointType": "Circle"
+        },
+        {
+          "id": "VU",
+          "value": 7652,
+          "name": "Vanuatu",
+          "pointType": "Circle"
+        },
+        {
+          "id": "VN",
+          "value": 8553,
+          "name": "Vietnam",
+          "pointType": "Circle"
+        },
+        {
+          "id": "VI",
+          "value": 2295,
+          "name": "US Virgin Islands",
+          "pointType": "Circle"
+        },
+        {
+          "id": "VG",
+          "value": 1543,
+          "name": "British Virgin Islands",
+          "pointType": "Circle"
+        },
+        {
+          "id": "VE",
+          "value": 5556,
+          "name": "Venezuela",
+          "pointType": "Circle"
+        },
+        {
+          "id": "VC",
+          "value": 1966,
+          "name": "Saint Vincent and the Grenadines",
+          "pointType": "Circle"
+        },
+        {
+          "id": "VA",
+          "value": 9468,
+          "name": "Vatican City",
+          "pointType": "Circle"
+        },
+        {
+          "id": "UZ",
+          "value": 6302,
+          "name": "Uzbekistan",
+          "pointType": "Circle"
+        },
+        {
+          "id": "US",
+          "value": 6463,
+          "name": "United States",
+          "pointType": "Circle"
+        },
+        {
+          "id": "UY",
+          "value": 1141,
+          "name": "Uruguay",
+          "pointType": "Circle"
+        },
+        {
+          "id": "UA",
+          "value": 6319,
+          "name": "Ukraine",
+          "pointType": "Circle"
+        },
+        {
+          "id": "UG",
+          "value": 9931,
+          "name": "Uganda",
+          "pointType": "Circle"
+        },
+        {
+          "id": "TZ",
+          "value": 1984,
+          "name": "Tanzania",
+          "pointType": "Circle"
+        },
+        {
+          "id": "TW",
+          "value": 9786,
+          "name": "Taiwan",
+          "pointType": "Circle"
+        },
+        {
+          "id": "TR",
+          "value": 1236,
+          "name": "Türkiye",
+          "pointType": "Circle"
+        },
+        {
+          "id": "TN",
+          "value": 6615,
+          "name": "Tunisia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "TT",
+          "value": 1484,
+          "name": "Trinidad and Tobago",
+          "pointType": "Circle"
+        },
+        {
+          "id": "TO",
+          "value": 7978,
+          "name": "Tonga",
+          "pointType": "Circle"
+        },
+        {
+          "id": "TL",
+          "value": 5865,
+          "name": "Timor-Leste",
+          "pointType": "Circle"
+        },
+        {
+          "id": "TM",
+          "value": 6355,
+          "name": "Turkmenistan",
+          "pointType": "Circle"
+        },
+        {
+          "id": "TK",
+          "value": 9569,
+          "name": "Tokelau",
+          "pointType": "Circle"
+        },
+        {
+          "id": "TJ",
+          "value": 5152,
+          "name": "Tajikistan",
+          "pointType": "Circle"
+        },
+        {
+          "id": "TH",
+          "value": 4096,
+          "name": "Thailand",
+          "pointType": "Circle"
+        },
+        {
+          "id": "TG",
+          "value": 5246,
+          "name": "Togo",
+          "pointType": "Circle"
+        },
+        {
+          "id": "TD",
+          "value": 7728,
+          "name": "Chad",
+          "pointType": "Circle"
+        },
+        {
+          "id": "TC",
+          "value": 4309,
+          "name": "Turks and Caicos Islands",
+          "pointType": "Circle"
+        },
+        {
+          "id": "SY",
+          "value": 5912,
+          "name": "Syria",
+          "pointType": "Circle"
+        },
+        {
+          "id": "SC",
+          "value": 9652,
+          "name": "Seychelles",
+          "pointType": "Circle"
+        },
+        {
+          "id": "SX",
+          "value": 366,
+          "name": "Sint Maarten",
+          "pointType": "Circle"
+        },
+        {
+          "id": "SZ",
+          "value": 1486,
+          "name": "Eswatini",
+          "pointType": "Circle"
+        },
+        {
+          "id": "SE",
+          "value": 8711,
+          "name": "Sweden",
+          "pointType": "Circle"
+        },
+        {
+          "id": "SI",
+          "value": 7582,
+          "name": "Slovenia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "SK",
+          "value": 4758,
+          "name": "Slovakia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "SR",
+          "value": 6152,
+          "name": "Suriname",
+          "pointType": "Circle"
+        },
+        {
+          "id": "ST",
+          "value": 7464,
+          "name": "Sao Tome and Principe",
+          "pointType": "Circle"
+        },
+        {
+          "id": "RS",
+          "value": 1207,
+          "name": "Serbia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "PM",
+          "value": 5386,
+          "name": "Saint Pierre and Miquelon",
+          "pointType": "Circle"
+        },
+        {
+          "id": "SO",
+          "value": 101,
+          "name": "Somalia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "SM",
+          "value": 9484,
+          "name": "San Marino",
+          "pointType": "Circle"
+        },
+        {
+          "id": "SV",
+          "value": 2308,
+          "name": "El Salvador",
+          "pointType": "Circle"
+        },
+        {
+          "id": "SL",
+          "value": 3144,
+          "name": "Sierra Leone",
+          "pointType": "Circle"
+        },
+        {
+          "id": "SB",
+          "value": 1642,
+          "name": "Solomon Islands",
+          "pointType": "Circle"
+        },
+        {
+          "id": "SH",
+          "value": 8567,
+          "name": "Saint Helena",
+          "pointType": "Circle"
+        },
+        {
+          "id": "GS",
+          "value": 7903,
+          "name": "South Georgia and South Sandwich Islands",
+          "pointType": "Circle"
+        },
+        {
+          "id": "SG",
+          "value": 6263,
+          "name": "Singapore",
+          "pointType": "Circle"
+        },
+        {
+          "id": "SN",
+          "value": 4607,
+          "name": "Senegal",
+          "pointType": "Circle"
+        },
+        {
+          "id": "SS",
+          "value": 1841,
+          "name": "South Sudan",
+          "pointType": "Circle"
+        },
+        {
+          "id": "SD",
+          "value": 7323,
+          "name": "Sudan",
+          "pointType": "Circle"
+        },
+        {
+          "id": "SA",
+          "value": 220,
+          "name": "Saudi Arabia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "EH",
+          "value": 1238,
+          "name": "Western Sahara",
+          "pointType": "Circle"
+        },
+        {
+          "id": "RW",
+          "value": 2561,
+          "name": "Rwanda",
+          "pointType": "Circle"
+        },
+        {
+          "id": "RU",
+          "value": 6921,
+          "name": "Russia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "RO",
+          "value": 1880,
+          "name": "Romania",
+          "pointType": "Circle"
+        },
+        {
+          "id": "RE",
+          "value": 6319,
+          "name": "Reunion",
+          "pointType": "Circle"
+        },
+        {
+          "id": "QA",
+          "value": 800,
+          "name": "Qatar",
+          "pointType": "Circle"
+        },
+        {
+          "id": "PF",
+          "value": 951,
+          "name": "French Polynesia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "PY",
+          "value": 9408,
+          "name": "Paraguay",
+          "pointType": "Circle"
+        },
+        {
+          "id": "PT",
+          "value": 1675,
+          "name": "Portugal",
+          "pointType": "Circle"
+        },
+        {
+          "id": "KP",
+          "value": 3427,
+          "name": "North Korea",
+          "pointType": "Circle"
+        },
+        {
+          "id": "PR",
+          "value": 289,
+          "name": "Puerto Rico",
+          "pointType": "Circle"
+        },
+        {
+          "id": "PL",
+          "value": 4535,
+          "name": "Poland",
+          "pointType": "Circle"
+        },
+        {
+          "id": "PG",
+          "value": 2342,
+          "name": "Papua New Guinea",
+          "pointType": "Circle"
+        },
+        {
+          "id": "PW",
+          "value": 7129,
+          "name": "Palau",
+          "pointType": "Circle"
+        },
+        {
+          "id": "PH",
+          "value": 601,
+          "name": "Philippines",
+          "pointType": "Circle"
+        },
+        {
+          "id": "PE",
+          "value": 5900,
+          "name": "Peru",
+          "pointType": "Circle"
+        },
+        {
+          "id": "PN",
+          "value": 3018,
+          "name": "Pitcairn Islands",
+          "pointType": "Circle"
+        },
+        {
+          "id": "PA",
+          "value": 2947,
+          "name": "Panama",
+          "pointType": "Circle"
+        },
+        {
+          "id": "PK",
+          "value": 6892,
+          "name": "Pakistan",
+          "pointType": "Circle"
+        },
+        {
+          "id": "OM",
+          "value": 2103,
+          "name": "Oman",
+          "pointType": "Circle"
+        },
+        {
+          "id": "NZ",
+          "value": 2542,
+          "name": "New Zealand",
+          "pointType": "Circle"
+        },
+        {
+          "id": "SJ",
+          "value": 2951,
+          "name": "Svalbard and Jan Mayen",
+          "pointType": "Circle"
+        },
+        {
+          "id": "NR",
+          "value": 7838,
+          "name": "Nauru",
+          "pointType": "Circle"
+        },
+        {
+          "id": "NP",
+          "value": 5806,
+          "name": "Nepal",
+          "pointType": "Circle"
+        },
+        {
+          "id": "NO",
+          "value": 9049,
+          "name": "Norway",
+          "pointType": "Circle"
+        },
+        {
+          "id": "NU",
+          "value": 9403,
+          "name": "Niue",
+          "pointType": "Circle"
+        },
+        {
+          "id": "NI",
+          "value": 5049,
+          "name": "Nicaragua",
+          "pointType": "Circle"
+        },
+        {
+          "id": "NG",
+          "value": 8923,
+          "name": "Nigeria",
+          "pointType": "Circle"
+        },
+        {
+          "id": "NF",
+          "value": 8789,
+          "name": "Norfolk Island",
+          "pointType": "Circle"
+        },
+        {
+          "id": "NE",
+          "value": 2481,
+          "name": "Niger",
+          "pointType": "Circle"
+        },
+        {
+          "id": "NC",
+          "value": 6646,
+          "name": "New Caledonia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "NA",
+          "value": 6694,
+          "name": "Namibia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "YT",
+          "value": 886,
+          "name": "Mayotte",
+          "pointType": "Circle"
+        },
+        {
+          "id": "MY",
+          "value": 1622,
+          "name": "Malaysia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "MW",
+          "value": 6725,
+          "name": "Malawi",
+          "pointType": "Circle"
+        },
+        {
+          "id": "MU",
+          "value": 5339,
+          "name": "Mauritius",
+          "pointType": "Circle"
+        },
+        {
+          "id": "MQ",
+          "value": 6889,
+          "name": "Martinique",
+          "pointType": "Circle"
+        },
+        {
+          "id": "MS",
+          "value": 2254,
+          "name": "Montserrat",
+          "pointType": "Circle"
+        },
+        {
+          "id": "MR",
+          "value": 782,
+          "name": "Mauritania",
+          "pointType": "Circle"
+        },
+        {
+          "id": "MZ",
+          "value": 5898,
+          "name": "Mozambique",
+          "pointType": "Circle"
+        },
+        {
+          "id": "MP",
+          "value": 7673,
+          "name": "Northern Mariana Islands",
+          "pointType": "Circle"
+        },
+        {
+          "id": "MN",
+          "value": 2716,
+          "name": "Mongolia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "ME",
+          "value": 1390,
+          "name": "Montenegro",
+          "pointType": "Circle"
+        },
+        {
+          "id": "MM",
+          "value": 6749,
+          "name": "Myanmar",
+          "pointType": "Circle"
+        },
+        {
+          "id": "MT",
+          "value": 4329,
+          "name": "Malta",
+          "pointType": "Circle"
+        },
+        {
+          "id": "ML",
+          "value": 6593,
+          "name": "Mali",
+          "pointType": "Circle"
+        },
+        {
+          "id": "MK",
+          "value": 4251,
+          "name": "North Macedonia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "MH",
+          "value": 9928,
+          "name": "Marshall Islands",
+          "pointType": "Circle"
+        },
+        {
+          "id": "MX",
+          "value": 3034,
+          "name": "Mexico",
+          "pointType": "Circle"
+        },
+        {
+          "id": "MV",
+          "value": 611,
+          "name": "Maldives",
+          "pointType": "Circle"
+        },
+        {
+          "id": "MG",
+          "value": 9023,
+          "name": "Madagascar",
+          "pointType": "Circle"
+        },
+        {
+          "id": "MD",
+          "value": 8415,
+          "name": "Moldova",
+          "pointType": "Circle"
+        },
+        {
+          "id": "MC",
+          "value": 5938,
+          "name": "Monaco",
+          "pointType": "Circle"
+        },
+        {
+          "id": "MA",
+          "value": 9350,
+          "name": "Morocco",
+          "pointType": "Circle"
+        },
+        {
+          "id": "MF",
+          "value": 3755,
+          "name": "Saint Martin",
+          "pointType": "Circle"
+        },
+        {
+          "id": "MO",
+          "value": 3800,
+          "name": "Macau",
+          "pointType": "Circle"
+        },
+        {
+          "id": "LV",
+          "value": 8761,
+          "name": "Latvia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "LU",
+          "value": 1228,
+          "name": "Luxembourg",
+          "pointType": "Circle"
+        },
+        {
+          "id": "LT",
+          "value": 9285,
+          "name": "Lithuania",
+          "pointType": "Circle"
+        },
+        {
+          "id": "LS",
+          "value": 4573,
+          "name": "Lesotho",
+          "pointType": "Circle"
+        },
+        {
+          "id": "LK",
+          "value": 1505,
+          "name": "Sri Lanka",
+          "pointType": "Circle"
+        },
+        {
+          "id": "LI",
+          "value": 4836,
+          "name": "Liechtenstein",
+          "pointType": "Circle"
+        },
+        {
+          "id": "LC",
+          "value": 3855,
+          "name": "Saint Lucia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "LY",
+          "value": 528,
+          "name": "Libya",
+          "pointType": "Circle"
+        },
+        {
+          "id": "LR",
+          "value": 5223,
+          "name": "Liberia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "LB",
+          "value": 3963,
+          "name": "Lebanon",
+          "pointType": "Circle"
+        },
+        {
+          "id": "LA",
+          "value": 8758,
+          "name": "Lao People's Democratic Republic",
+          "pointType": "Circle"
+        },
+        {
+          "id": "KW",
+          "value": 4403,
+          "name": "Kuwait",
+          "pointType": "Circle"
+        },
+        {
+          "id": "XK",
+          "value": 8737,
+          "name": "Kosovo",
+          "pointType": "Circle"
+        },
+        {
+          "id": "KR",
+          "value": 6603,
+          "name": "South Korea",
+          "pointType": "Circle"
+        },
+        {
+          "id": "KN",
+          "value": 4537,
+          "name": "Saint Kitts and Nevis",
+          "pointType": "Circle"
+        },
+        {
+          "id": "KI",
+          "value": 363,
+          "name": "Kiribati",
+          "pointType": "Circle"
+        },
+        {
+          "id": "KH",
+          "value": 5820,
+          "name": "Cambodia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "KG",
+          "value": 6077,
+          "name": "Kyrgyzstan",
+          "pointType": "Circle"
+        },
+        {
+          "id": "KE",
+          "value": 6600,
+          "name": "Kenya",
+          "pointType": "Circle"
+        },
+        {
+          "id": "KZ",
+          "value": 1077,
+          "name": "Kazakhstan",
+          "pointType": "Circle"
+        },
+        {
+          "id": "JP",
+          "value": 7610,
+          "name": "Japan",
+          "pointType": "Circle"
+        },
+        {
+          "id": "JO",
+          "value": 4404,
+          "name": "Jordan",
+          "pointType": "Circle"
+        },
+        {
+          "id": "JE",
+          "value": 8605,
+          "name": "Jersey",
+          "pointType": "Circle"
+        },
+        {
+          "id": "JM",
+          "value": 8605,
+          "name": "Jamaica",
+          "pointType": "Circle"
+        },
+        {
+          "id": "IT",
+          "value": 7818,
+          "name": "Italy",
+          "pointType": "Circle"
+        },
+        {
+          "id": "IL",
+          "value": 3879,
+          "name": "Israel",
+          "pointType": "Circle"
+        },
+        {
+          "id": "IS",
+          "value": 4012,
+          "name": "Iceland",
+          "pointType": "Circle"
+        },
+        {
+          "id": "IQ",
+          "value": 4028,
+          "name": "Iraq",
+          "pointType": "Circle"
+        },
+        {
+          "id": "IR",
+          "value": 9331,
+          "name": "Iran",
+          "pointType": "Circle"
+        },
+        {
+          "id": "IE",
+          "value": 7136,
+          "name": "Ireland",
+          "pointType": "Circle"
+        },
+        {
+          "id": "IO",
+          "value": 2374,
+          "name": "British Indian Ocean Territory",
+          "pointType": "Circle"
+        },
+        {
+          "id": "IN",
+          "value": 8299,
+          "name": "India",
+          "pointType": "Circle"
+        },
+        {
+          "id": "IM",
+          "value": 475,
+          "name": "Isle of Man",
+          "pointType": "Circle"
+        },
+        {
+          "id": "ID",
+          "value": 1535,
+          "name": "Indonesia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "HU",
+          "value": 503,
+          "name": "Hungary",
+          "pointType": "Circle"
+        },
+        {
+          "id": "HT",
+          "value": 9249,
+          "name": "Haiti",
+          "pointType": "Circle"
+        },
+        {
+          "id": "HR",
+          "value": 3294,
+          "name": "Croatia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "HN",
+          "value": 405,
+          "name": "Honduras",
+          "pointType": "Circle"
+        },
+        {
+          "id": "HM",
+          "value": 8567,
+          "name": "Heard Island and McDonald Islands",
+          "pointType": "Circle"
+        },
+        {
+          "id": "HK",
+          "value": 3790,
+          "name": "Hong Kong",
+          "pointType": "Circle"
+        },
+        {
+          "id": "GY",
+          "value": 1701,
+          "name": "Guyana",
+          "pointType": "Circle"
+        },
+        {
+          "id": "GU",
+          "value": 1941,
+          "name": "Guam",
+          "pointType": "Circle"
+        },
+        {
+          "id": "GF",
+          "value": 5068,
+          "name": "French Guiana",
+          "pointType": "Circle"
+        },
+        {
+          "id": "GT",
+          "value": 7537,
+          "name": "Guatemala",
+          "pointType": "Circle"
+        },
+        {
+          "id": "GL",
+          "value": 9190,
+          "name": "Greenland",
+          "pointType": "Circle"
+        },
+        {
+          "id": "GD",
+          "value": 2549,
+          "name": "Grenada",
+          "pointType": "Circle"
+        },
+        {
+          "id": "GR",
+          "value": 6971,
+          "name": "Greece",
+          "pointType": "Circle"
+        },
+        {
+          "id": "GQ",
+          "value": 6390,
+          "name": "Equatorial Guinea",
+          "pointType": "Circle"
+        },
+        {
+          "id": "GW",
+          "value": 4903,
+          "name": "Guinea-Bissau",
+          "pointType": "Circle"
+        },
+        {
+          "id": "GM",
+          "value": 8265,
+          "name": "Gambia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "GP",
+          "value": 5038,
+          "name": "Guadeloupe",
+          "pointType": "Circle"
+        },
+        {
+          "id": "GN",
+          "value": 3812,
+          "name": "Guinea",
+          "pointType": "Circle"
+        },
+        {
+          "id": "GH",
+          "value": 6401,
+          "name": "Ghana",
+          "pointType": "Circle"
+        },
+        {
+          "id": "GG",
+          "value": 8723,
+          "name": "Guernsey",
+          "pointType": "Circle"
+        },
+        {
+          "id": "GE",
+          "value": 9289,
+          "name": "Georgia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "GA",
+          "value": 423,
+          "name": "Gabon",
+          "pointType": "Circle"
+        },
+        {
+          "id": "FR",
+          "value": 3037,
+          "name": "France",
+          "pointType": "Circle"
+        },
+        {
+          "id": "FM",
+          "value": 2422,
+          "name": "Federated States of Micronesia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "FO",
+          "value": 6475,
+          "name": "Faroe Islands",
+          "pointType": "Circle"
+        },
+        {
+          "id": "FK",
+          "value": 4775,
+          "name": "Falkland Islands",
+          "pointType": "Circle"
+        },
+        {
+          "id": "FJ",
+          "value": 9567,
+          "name": "Fiji",
+          "pointType": "Circle"
+        },
+        {
+          "id": "FI",
+          "value": 4377,
+          "name": "Finland",
+          "pointType": "Circle"
+        },
+        {
+          "id": "ET",
+          "value": 4276,
+          "name": "Ethiopia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "EE",
+          "value": 288,
+          "name": "Estonia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "ES",
+          "value": 310,
+          "name": "Spain",
+          "pointType": "Circle"
+        },
+        {
+          "id": "ER",
+          "value": 3422,
+          "name": "Eritrea",
+          "pointType": "Circle"
+        },
+        {
+          "id": "GB",
+          "value": 7478,
+          "name": "United Kingdom",
+          "pointType": "Circle"
+        },
+        {
+          "id": "EG",
+          "value": 9200,
+          "name": "Egypt",
+          "pointType": "Circle"
+        },
+        {
+          "id": "EC",
+          "value": 9563,
+          "name": "Ecuador",
+          "pointType": "Circle"
+        },
+        {
+          "id": "DZ",
+          "value": 5651,
+          "name": "Algeria",
+          "pointType": "Circle"
+        },
+        {
+          "id": "DO",
+          "value": 9085,
+          "name": "Dominican Republic",
+          "pointType": "Circle"
+        },
+        {
+          "id": "DK",
+          "value": 7266,
+          "name": "Denmark",
+          "pointType": "Circle"
+        },
+        {
+          "id": "DM",
+          "value": 187,
+          "name": "Dominica",
+          "pointType": "Circle"
+        },
+        {
+          "id": "DJ",
+          "value": 9697,
+          "name": "Djibouti",
+          "pointType": "Circle"
+        },
+        {
+          "id": "DE",
+          "value": 7843,
+          "name": "Germany",
+          "pointType": "Circle"
+        },
+        {
+          "id": "CZ",
+          "value": 124,
+          "name": "Czechia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "CY",
+          "value": 9536,
+          "name": "Cyprus",
+          "pointType": "Circle"
+        },
+        {
+          "id": "KY",
+          "value": 3579,
+          "name": "Cayman Islands",
+          "pointType": "Circle"
+        },
+        {
+          "id": "CX",
+          "value": 7237,
+          "name": "Christmas Island",
+          "pointType": "Circle"
+        },
+        {
+          "id": "CW",
+          "value": 5455,
+          "name": "Curaçao",
+          "pointType": "Circle"
+        },
+        {
+          "id": "CU",
+          "value": 8449,
+          "name": "Cuba",
+          "pointType": "Circle"
+        },
+        {
+          "id": "CR",
+          "value": 2365,
+          "name": "Costa Rica",
+          "pointType": "Circle"
+        },
+        {
+          "id": "CV",
+          "value": 6853,
+          "name": "Cape Verde",
+          "pointType": "Circle"
+        },
+        {
+          "id": "KM",
+          "value": 7003,
+          "name": "Comoros",
+          "pointType": "Circle"
+        },
+        {
+          "id": "CO",
+          "value": 7249,
+          "name": "Colombia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "CK",
+          "value": 4467,
+          "name": "Cook Islands",
+          "pointType": "Circle"
+        },
+        {
+          "id": "CG",
+          "value": 7387,
+          "name": "Republic of Congo",
+          "pointType": "Circle"
+        },
+        {
+          "id": "CD",
+          "value": 7381,
+          "name": "Democratic Republic of Congo",
+          "pointType": "Circle"
+        },
+        {
+          "id": "CM",
+          "value": 9947,
+          "name": "Cameroon",
+          "pointType": "Circle"
+        },
+        {
+          "id": "CI",
+          "value": 635,
+          "name": "Côte d'Ivoire",
+          "pointType": "Circle"
+        },
+        {
+          "id": "CN",
+          "value": 2653,
+          "name": "China",
+          "pointType": "Circle"
+        },
+        {
+          "id": "CL",
+          "value": 4271,
+          "name": "Chile",
+          "pointType": "Circle"
+        },
+        {
+          "id": "CH",
+          "value": 438,
+          "name": "Switzerland",
+          "pointType": "Circle"
+        },
+        {
+          "id": "CC",
+          "value": 1300,
+          "name": "Cocos (Keeling) Islands",
+          "pointType": "Circle"
+        },
+        {
+          "id": "CA",
+          "value": 6396,
+          "name": "Canada",
+          "pointType": "Circle"
+        },
+        {
+          "id": "CF",
+          "value": 5164,
+          "name": "Central African Republic",
+          "pointType": "Circle"
+        },
+        {
+          "id": "BE",
+          "value": 8914,
+          "name": "Belgium",
+          "pointType": "Circle"
+        },
+        {
+          "id": "BW",
+          "value": 8713,
+          "name": "Botswana",
+          "pointType": "Circle"
+        },
+        {
+          "id": "BT",
+          "value": 3338,
+          "name": "Bhutan",
+          "pointType": "Circle"
+        },
+        {
+          "id": "BN",
+          "value": 9185,
+          "name": "Brunei",
+          "pointType": "Circle"
+        },
+        {
+          "id": "BB",
+          "value": 4239,
+          "name": "Barbados",
+          "pointType": "Circle"
+        },
+        {
+          "id": "BR",
+          "value": 1644,
+          "name": "Brazil",
+          "pointType": "Circle"
+        },
+        {
+          "id": "BO",
+          "value": 2305,
+          "name": "Bolivia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "BM",
+          "value": 2940,
+          "name": "Bermuda",
+          "pointType": "Circle"
+        },
+        {
+          "id": "BZ",
+          "value": 6927,
+          "name": "Belize",
+          "pointType": "Circle"
+        },
+        {
+          "id": "BY",
+          "value": 2432,
+          "name": "Belarus",
+          "pointType": "Circle"
+        },
+        {
+          "id": "BL",
+          "value": 749,
+          "name": "Saint Barthelemy",
+          "pointType": "Circle"
+        },
+        {
+          "id": "BS",
+          "value": 6928,
+          "name": "Bahamas",
+          "pointType": "Circle"
+        },
+        {
+          "id": "BH",
+          "value": 8127,
+          "name": "Bahrain",
+          "pointType": "Circle"
+        },
+        {
+          "id": "BA",
+          "value": 3456,
+          "name": "Bosnia and Herzegovina",
+          "pointType": "Circle"
+        },
+        {
+          "id": "BG",
+          "value": 4169,
+          "name": "Bulgaria",
+          "pointType": "Circle"
+        },
+        {
+          "id": "BD",
+          "value": 86,
+          "name": "Bangladesh",
+          "pointType": "Circle"
+        },
+        {
+          "id": "BF",
+          "value": 1601,
+          "name": "Burkina Faso",
+          "pointType": "Circle"
+        },
+        {
+          "id": "BJ",
+          "value": 9720,
+          "name": "Benin",
+          "pointType": "Circle"
+        },
+        {
+          "id": "BI",
+          "value": 5219,
+          "name": "Burundi",
+          "pointType": "Circle"
+        },
+        {
+          "id": "AZ",
+          "value": 3488,
+          "name": "Azerbaijan",
+          "pointType": "Circle"
+        },
+        {
+          "id": "AT",
+          "value": 3847,
+          "name": "Austria",
+          "pointType": "Circle"
+        },
+        {
+          "id": "AU",
+          "value": 9445,
+          "name": "Australia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "TF",
+          "value": 9915,
+          "name": "French Southern and Antarctic Lands",
+          "pointType": "Circle"
+        },
+        {
+          "id": "AQ",
+          "value": 3011,
+          "name": "Antarctica",
+          "pointType": "Circle"
+        },
+        {
+          "id": "AS",
+          "value": 7289,
+          "name": "American Samoa",
+          "pointType": "Circle"
+        },
+        {
+          "id": "AM",
+          "value": 2620,
+          "name": "Armenia",
+          "pointType": "Circle"
+        },
+        {
+          "id": "AR",
+          "value": 1146,
+          "name": "Argentina",
+          "pointType": "Circle"
+        },
+        {
+          "id": "AE",
+          "value": 6016,
+          "name": "United Arab Emirates",
+          "pointType": "Circle"
+        },
+        {
+          "id": "AD",
+          "value": 9269,
+          "name": "Andorra",
+          "pointType": "Circle"
+        },
+        {
+          "id": "AX",
+          "value": 7688,
+          "name": "Aland Islands",
+          "pointType": "Circle"
+        },
+        {
+          "id": "AL",
+          "value": 5676,
+          "name": "Albania",
+          "pointType": "Circle"
+        },
+        {
+          "id": "AI",
+          "value": 6958,
+          "name": "Anguilla",
+          "pointType": "Circle"
+        },
+        {
+          "id": "AO",
+          "value": 2290,
+          "name": "Angola",
+          "pointType": "Circle"
+        },
+        {
+          "id": "AF",
+          "value": 9968,
+          "name": "Afghanistan",
+          "pointType": "Circle"
+        },
+        {
+          "id": "AG",
+          "value": 8009,
+          "name": "Antigua and Barbuda",
+          "pointType": "Circle"
+        },
+        {
+          "id": "AW",
+          "value": 2326,
+          "name": "Aruba",
+          "pointType": "Circle"
+        }
+      ],
+      "editor.lineSeries": [],
+      "editor.pointSeries": [],
+      "editor.labelSeries": [],
+      "editor.bubbleSeries": [],
+      "editor.gridSeries": [],
+      "editor.pixelCountrySeries.GL": [
+        {
+          "longitude": -34.65207,
+          "latitude": 83.5995
+        },
+        {
+          "longitude": -41.99361,
+          "latitude": 82.72672
+        },
+        {
+          "longitude": -34.65207,
+          "latitude": 82.72672
+        },
+        {
+          "longitude": -27.31053,
+          "latitude": 82.72672
+        },
+        {
+          "longitude": -56.6767,
+          "latitude": 81.73567
+        },
+        {
+          "longitude": -49.33516,
+          "latitude": 81.73567
+        },
+        {
+          "longitude": -41.99361,
+          "latitude": 81.73567
+        },
+        {
+          "longitude": -34.65207,
+          "latitude": 81.73567
+        },
+        {
+          "longitude": -27.31053,
+          "latitude": 81.73567
+        },
+        {
+          "longitude": -12.62745,
+          "latitude": 81.73567
+        },
+        {
+          "longitude": -64.01824,
+          "latitude": 80.61064
+        },
+        {
+          "longitude": -56.6767,
+          "latitude": 80.61064
+        },
+        {
+          "longitude": -49.33516,
+          "latitude": 80.61064
+        },
+        {
+          "longitude": -41.99361,
+          "latitude": 80.61064
+        },
+        {
+          "longitude": -34.65207,
+          "latitude": 80.61064
+        },
+        {
+          "longitude": -27.31053,
+          "latitude": 80.61064
+        },
+        {
+          "longitude": -19.96899,
+          "latitude": 80.61064
+        },
+        {
+          "longitude": -64.01824,
+          "latitude": 79.33402
+        },
+        {
+          "longitude": -56.6767,
+          "latitude": 79.33402
+        },
+        {
+          "longitude": -49.33516,
+          "latitude": 79.33402
+        },
+        {
+          "longitude": -41.99361,
+          "latitude": 79.33402
+        },
+        {
+          "longitude": -34.65207,
+          "latitude": 79.33402
+        },
+        {
+          "longitude": -27.31053,
+          "latitude": 79.33402
+        },
+        {
+          "longitude": -19.96899,
+          "latitude": 79.33402
+        },
+        {
+          "longitude": -71.35978,
+          "latitude": 77.88612
+        },
+        {
+          "longitude": -64.01824,
+          "latitude": 77.88612
+        },
+        {
+          "longitude": -56.6767,
+          "latitude": 77.88612
+        },
+        {
+          "longitude": -49.33516,
+          "latitude": 77.88612
+        },
+        {
+          "longitude": -41.99361,
+          "latitude": 77.88612
+        },
+        {
+          "longitude": -34.65207,
+          "latitude": 77.88612
+        },
+        {
+          "longitude": -27.31053,
+          "latitude": 77.88612
+        },
+        {
+          "longitude": -56.6767,
+          "latitude": 76.245
+        },
+        {
+          "longitude": -49.33516,
+          "latitude": 76.245
+        },
+        {
+          "longitude": -41.99361,
+          "latitude": 76.245
+        },
+        {
+          "longitude": -34.65207,
+          "latitude": 76.245
+        },
+        {
+          "longitude": -27.31053,
+          "latitude": 76.245
+        },
+        {
+          "longitude": -56.6767,
+          "latitude": 74.38644
+        },
+        {
+          "longitude": -49.33516,
+          "latitude": 74.38644
+        },
+        {
+          "longitude": -41.99361,
+          "latitude": 74.38644
+        },
+        {
+          "longitude": -34.65207,
+          "latitude": 74.38644
+        },
+        {
+          "longitude": -27.31053,
+          "latitude": 74.38644
+        },
+        {
+          "longitude": -19.96899,
+          "latitude": 74.38644
+        },
+        {
+          "longitude": -49.33516,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": -41.99361,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": -34.65207,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": -27.31053,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": -49.33516,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": -41.99361,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": -34.65207,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": -27.31053,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": -49.33516,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": -41.99361,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": -34.65207,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": -49.33516,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": -41.99361,
+          "latitude": 64.21453
+        }
+      ],
+      "editor.pixelCountrySeries.CA": [
+        {
+          "longitude": -78.70132,
+          "latitude": 82.72672
+        },
+        {
+          "longitude": -71.35978,
+          "latitude": 82.72672
+        },
+        {
+          "longitude": -64.01824,
+          "latitude": 82.72672
+        },
+        {
+          "longitude": -86.04286,
+          "latitude": 81.73567
+        },
+        {
+          "longitude": -78.70132,
+          "latitude": 81.73567
+        },
+        {
+          "longitude": -71.35978,
+          "latitude": 81.73567
+        },
+        {
+          "longitude": -93.3844,
+          "latitude": 80.61064
+        },
+        {
+          "longitude": -86.04286,
+          "latitude": 80.61064
+        },
+        {
+          "longitude": -78.70132,
+          "latitude": 80.61064
+        },
+        {
+          "longitude": -71.35978,
+          "latitude": 80.61064
+        },
+        {
+          "longitude": -93.3844,
+          "latitude": 79.33402
+        },
+        {
+          "longitude": -86.04286,
+          "latitude": 79.33402
+        },
+        {
+          "longitude": -78.70132,
+          "latitude": 79.33402
+        },
+        {
+          "longitude": -86.04286,
+          "latitude": 77.88612
+        },
+        {
+          "longitude": -78.70132,
+          "latitude": 77.88612
+        },
+        {
+          "longitude": -115.40902,
+          "latitude": 76.245
+        },
+        {
+          "longitude": -100.72594,
+          "latitude": 76.245
+        },
+        {
+          "longitude": -122.75057,
+          "latitude": 74.38644
+        },
+        {
+          "longitude": -122.75057,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": -115.40902,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": -108.06748,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": -100.72594,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": -86.04286,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": -78.70132,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": -130.09211,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": -122.75057,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": -115.40902,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": -108.06748,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": -93.3844,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": -71.35978,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": -137.43365,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": -130.09211,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": -122.75057,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": -115.40902,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": -108.06748,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": -100.72594,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": -93.3844,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": -86.04286,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": -71.35978,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": -64.01824,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": -137.43365,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": -130.09211,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": -122.75057,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": -115.40902,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": -108.06748,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": -100.72594,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": -93.3844,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": -86.04286,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": -71.35978,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": -137.43365,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": -130.09211,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": -122.75057,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": -115.40902,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": -108.06748,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": -100.72594,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": -71.35978,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": -130.09211,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": -122.75057,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": -115.40902,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": -108.06748,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": -100.72594,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": -93.3844,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": -71.35978,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": -64.01824,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": -122.75057,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": -115.40902,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": -108.06748,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": -100.72594,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": -93.3844,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": -86.04286,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": -78.70132,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": -71.35978,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": -64.01824,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": -56.6767,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": -86.04286,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": -78.70132,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": -71.35978,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": -56.6767,
+          "latitude": 48.17145
+        }
+      ],
+      "editor.pixelCountrySeries.RU": [
+        {
+          "longitude": 60.78796,
+          "latitude": 80.61064
+        },
+        {
+          "longitude": 97.49566,
+          "latitude": 79.33402
+        },
+        {
+          "longitude": 97.49566,
+          "latitude": 76.245
+        },
+        {
+          "longitude": 104.83721,
+          "latitude": 76.245
+        },
+        {
+          "longitude": 112.17875,
+          "latitude": 76.245
+        },
+        {
+          "longitude": 90.15412,
+          "latitude": 74.38644
+        },
+        {
+          "longitude": 97.49566,
+          "latitude": 74.38644
+        },
+        {
+          "longitude": 104.83721,
+          "latitude": 74.38644
+        },
+        {
+          "longitude": 112.17875,
+          "latitude": 74.38644
+        },
+        {
+          "longitude": 53.44642,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": 68.1295,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": 75.47104,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": 82.81258,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": 90.15412,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": 97.49566,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": 104.83721,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": 112.17875,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": 119.52029,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": 126.86183,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": 141.54491,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": 148.88645,
+          "latitude": 72.28384
+        },
+        {
+          "longitude": 31.4218,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": 60.78796,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": 68.1295,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": 75.47104,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": 82.81258,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": 90.15412,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": 97.49566,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": 104.83721,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": 112.17875,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": 119.52029,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": 126.86183,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": 134.20337,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": 141.54491,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": 148.88645,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": 156.22799,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": 163.56953,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": 170.91107,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": -174.14135,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 31.4218,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 38.76334,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 53.44642,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 60.78796,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 68.1295,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 75.47104,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 82.81258,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 90.15412,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 97.49566,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 104.83721,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 112.17875,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 119.52029,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 126.86183,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 134.20337,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 141.54491,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 148.88645,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 156.22799,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 163.56953,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 170.91107,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 178.25262,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 31.4218,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 38.76334,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 46.10488,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 53.44642,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 60.78796,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 68.1295,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 75.47104,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 82.81258,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 90.15412,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 97.49566,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 104.83721,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 112.17875,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 119.52029,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 126.86183,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 134.20337,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 141.54491,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 148.88645,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 156.22799,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 163.56953,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 170.91107,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 178.25262,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 31.4218,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": 38.76334,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": 46.10488,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": 53.44642,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": 60.78796,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": 68.1295,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": 75.47104,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": 82.81258,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": 90.15412,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": 97.49566,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": 104.83721,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": 112.17875,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": 119.52029,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": 126.86183,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": 134.20337,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": 141.54491,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": 148.88645,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": 163.56953,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": 170.91107,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": 31.4218,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": 38.76334,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": 46.10488,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": 53.44642,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": 60.78796,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": 68.1295,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": 75.47104,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": 82.81258,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": 90.15412,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": 97.49566,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": 104.83721,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": 112.17875,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": 119.52029,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": 126.86183,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": 134.20337,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": 156.22799,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": 31.4218,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": 38.76334,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": 46.10488,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": 53.44642,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": 82.81258,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": 90.15412,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": 97.49566,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": 104.83721,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": 112.17875,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": 119.52029,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": 126.86183,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": 134.20337,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": 141.54491,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": 156.22799,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": 46.10488,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": 141.54491,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": 46.10488,
+          "latitude": 43.0407
+        }
+      ],
+      "editor.pixelCountrySeries.SJ": [
+        {
+          "longitude": 16.73871,
+          "latitude": 79.33402
+        },
+        {
+          "longitude": 24.08025,
+          "latitude": 79.33402
+        },
+        {
+          "longitude": 16.73871,
+          "latitude": 77.88612
+        }
+      ],
+      "editor.pixelCountrySeries.US": [
+        {
+          "longitude": -159.45827,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": -152.11673,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": -144.77519,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": -159.45827,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": -152.11673,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": -144.77519,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": -159.45827,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": -152.11673,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": -144.77519,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": -159.45827,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": -152.11673,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": -144.77519,
+          "latitude": 60.83133
+        },
+        {
+          "longitude": -159.45827,
+          "latitude": 57.04802
+        },
+        {
+          "longitude": -122.75057,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": -115.40902,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": -108.06748,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": -100.72594,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": -93.3844,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": -122.75057,
+          "latitude": 43.0407
+        },
+        {
+          "longitude": -115.40902,
+          "latitude": 43.0407
+        },
+        {
+          "longitude": -108.06748,
+          "latitude": 43.0407
+        },
+        {
+          "longitude": -100.72594,
+          "latitude": 43.0407
+        },
+        {
+          "longitude": -93.3844,
+          "latitude": 43.0407
+        },
+        {
+          "longitude": -86.04286,
+          "latitude": 43.0407
+        },
+        {
+          "longitude": -78.70132,
+          "latitude": 43.0407
+        },
+        {
+          "longitude": -71.35978,
+          "latitude": 43.0407
+        },
+        {
+          "longitude": -122.75057,
+          "latitude": 37.44212
+        },
+        {
+          "longitude": -115.40902,
+          "latitude": 37.44212
+        },
+        {
+          "longitude": -108.06748,
+          "latitude": 37.44212
+        },
+        {
+          "longitude": -100.72594,
+          "latitude": 37.44212
+        },
+        {
+          "longitude": -93.3844,
+          "latitude": 37.44212
+        },
+        {
+          "longitude": -86.04286,
+          "latitude": 37.44212
+        },
+        {
+          "longitude": -78.70132,
+          "latitude": 37.44212
+        },
+        {
+          "longitude": -100.72594,
+          "latitude": 31.39118
+        },
+        {
+          "longitude": -93.3844,
+          "latitude": 31.39118
+        },
+        {
+          "longitude": -86.04286,
+          "latitude": 31.39118
+        }
+      ],
+      "editor.pixelCountrySeries.NO": [
+        {
+          "longitude": 24.08025,
+          "latitude": 69.90839
+        },
+        {
+          "longitude": 9.39717,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 9.39717,
+          "latitude": 60.83133
+        }
+      ],
+      "editor.pixelCountrySeries.SE": [
+        {
+          "longitude": 16.73871,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 16.73871,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 16.73871,
+          "latitude": 60.83133
+        }
+      ],
+      "editor.pixelCountrySeries.FI": [
+        {
+          "longitude": 24.08025,
+          "latitude": 67.22934
+        },
+        {
+          "longitude": 24.08025,
+          "latitude": 64.21453
+        },
+        {
+          "longitude": 24.08025,
+          "latitude": 60.83133
+        }
+      ],
+      "editor.pixelCountrySeries.IS": [
+        {
+          "longitude": -19.96899,
+          "latitude": 64.21453
+        }
+      ],
+      "editor.pixelCountrySeries.GB": [
+        {
+          "longitude": -5.28591,
+          "latitude": 57.04802
+        }
+      ],
+      "editor.pixelCountrySeries.DK": [
+        {
+          "longitude": 9.39717,
+          "latitude": 57.04802
+        }
+      ],
+      "editor.pixelCountrySeries.LV": [
+        {
+          "longitude": 24.08025,
+          "latitude": 57.04802
+        }
+      ],
+      "editor.pixelCountrySeries.DE": [
+        {
+          "longitude": 9.39717,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": 9.39717,
+          "latitude": 48.17145
+        }
+      ],
+      "editor.pixelCountrySeries.PL": [
+        {
+          "longitude": 16.73871,
+          "latitude": 52.8358
+        }
+      ],
+      "editor.pixelCountrySeries.BY": [
+        {
+          "longitude": 24.08025,
+          "latitude": 52.8358
+        }
+      ],
+      "editor.pixelCountrySeries.KZ": [
+        {
+          "longitude": 60.78796,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": 68.1295,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": 75.47104,
+          "latitude": 52.8358
+        },
+        {
+          "longitude": 53.44642,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": 60.78796,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": 68.1295,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": 75.47104,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": 82.81258,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": 53.44642,
+          "latitude": 43.0407
+        },
+        {
+          "longitude": 68.1295,
+          "latitude": 43.0407
+        }
+      ],
+      "editor.pixelCountrySeries.FR": [
+        {
+          "longitude": 2.05563,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": 2.05563,
+          "latitude": 43.0407
+        }
+      ],
+      "editor.pixelCountrySeries.AT": [
+        {
+          "longitude": 16.73871,
+          "latitude": 48.17145
+        }
+      ],
+      "editor.pixelCountrySeries.UA": [
+        {
+          "longitude": 24.08025,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": 31.4218,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": 38.76334,
+          "latitude": 48.17145
+        }
+      ],
+      "editor.pixelCountrySeries.MN": [
+        {
+          "longitude": 90.15412,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": 97.49566,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": 104.83721,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": 112.17875,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": 97.49566,
+          "latitude": 43.0407
+        },
+        {
+          "longitude": 104.83721,
+          "latitude": 43.0407
+        }
+      ],
+      "editor.pixelCountrySeries.CN": [
+        {
+          "longitude": 119.52029,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": 126.86183,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": 134.20337,
+          "latitude": 48.17145
+        },
+        {
+          "longitude": 82.81258,
+          "latitude": 43.0407
+        },
+        {
+          "longitude": 90.15412,
+          "latitude": 43.0407
+        },
+        {
+          "longitude": 112.17875,
+          "latitude": 43.0407
+        },
+        {
+          "longitude": 119.52029,
+          "latitude": 43.0407
+        },
+        {
+          "longitude": 126.86183,
+          "latitude": 43.0407
+        },
+        {
+          "longitude": 75.47104,
+          "latitude": 37.44212
+        },
+        {
+          "longitude": 82.81258,
+          "latitude": 37.44212
+        },
+        {
+          "longitude": 90.15412,
+          "latitude": 37.44212
+        },
+        {
+          "longitude": 97.49566,
+          "latitude": 37.44212
+        },
+        {
+          "longitude": 104.83721,
+          "latitude": 37.44212
+        },
+        {
+          "longitude": 112.17875,
+          "latitude": 37.44212
+        },
+        {
+          "longitude": 119.52029,
+          "latitude": 37.44212
+        },
+        {
+          "longitude": 82.81258,
+          "latitude": 31.39118
+        },
+        {
+          "longitude": 90.15412,
+          "latitude": 31.39118
+        },
+        {
+          "longitude": 97.49566,
+          "latitude": 31.39118
+        },
+        {
+          "longitude": 104.83721,
+          "latitude": 31.39118
+        },
+        {
+          "longitude": 112.17875,
+          "latitude": 31.39118
+        },
+        {
+          "longitude": 119.52029,
+          "latitude": 31.39118
+        },
+        {
+          "longitude": 97.49566,
+          "latitude": 24.92389
+        },
+        {
+          "longitude": 104.83721,
+          "latitude": 24.92389
+        },
+        {
+          "longitude": 112.17875,
+          "latitude": 24.92389
+        }
+      ],
+      "editor.pixelCountrySeries.ES": [
+        {
+          "longitude": -5.28591,
+          "latitude": 43.0407
+        },
+        {
+          "longitude": -5.28591,
+          "latitude": 37.44212
+        }
+      ],
+      "editor.pixelCountrySeries.BG": [
+        {
+          "longitude": 24.08025,
+          "latitude": 43.0407
+        }
+      ],
+      "editor.pixelCountrySeries.UZ": [
+        {
+          "longitude": 60.78796,
+          "latitude": 43.0407
+        }
+      ],
+      "editor.pixelCountrySeries.KG": [
+        {
+          "longitude": 75.47104,
+          "latitude": 43.0407
+        }
+      ],
+      "editor.pixelCountrySeries.JP": [
+        {
+          "longitude": 141.54491,
+          "latitude": 43.0407
+        }
+      ],
+      "editor.pixelCountrySeries.TN": [
+        {
+          "longitude": 9.39717,
+          "latitude": 37.44212
+        },
+        {
+          "longitude": 9.39717,
+          "latitude": 31.39118
+        }
+      ],
+      "editor.pixelCountrySeries.TR": [
+        {
+          "longitude": 31.4218,
+          "latitude": 37.44212
+        },
+        {
+          "longitude": 38.76334,
+          "latitude": 37.44212
+        }
+      ],
+      "editor.pixelCountrySeries.IR": [
+        {
+          "longitude": 46.10488,
+          "latitude": 37.44212
+        },
+        {
+          "longitude": 53.44642,
+          "latitude": 37.44212
+        },
+        {
+          "longitude": 53.44642,
+          "latitude": 31.39118
+        },
+        {
+          "longitude": 60.78796,
+          "latitude": 31.39118
+        }
+      ],
+      "editor.pixelCountrySeries.TM": [
+        {
+          "longitude": 60.78796,
+          "latitude": 37.44212
+        }
+      ],
+      "editor.pixelCountrySeries.TJ": [
+        {
+          "longitude": 68.1295,
+          "latitude": 37.44212
+        }
+      ],
+      "editor.pixelCountrySeries.KR": [
+        {
+          "longitude": 126.86183,
+          "latitude": 37.44212
+        }
+      ],
+      "editor.pixelCountrySeries.MX": [
+        {
+          "longitude": -115.40902,
+          "latitude": 31.39118
+        },
+        {
+          "longitude": -108.06748,
+          "latitude": 31.39118
+        },
+        {
+          "longitude": -108.06748,
+          "latitude": 24.92389
+        },
+        {
+          "longitude": -100.72594,
+          "latitude": 24.92389
+        },
+        {
+          "longitude": -100.72594,
+          "latitude": 18.09903
+        },
+        {
+          "longitude": -93.3844,
+          "latitude": 18.09903
+        }
+      ],
+      "editor.pixelCountrySeries.MA": [
+        {
+          "longitude": -5.28591,
+          "latitude": 31.39118
+        }
+      ],
+      "editor.pixelCountrySeries.DZ": [
+        {
+          "longitude": 2.05563,
+          "latitude": 31.39118
+        },
+        {
+          "longitude": 2.05563,
+          "latitude": 24.92389
+        },
+        {
+          "longitude": 9.39717,
+          "latitude": 24.92389
+        }
+      ],
+      "editor.pixelCountrySeries.LY": [
+        {
+          "longitude": 16.73871,
+          "latitude": 31.39118
+        },
+        {
+          "longitude": 24.08025,
+          "latitude": 31.39118
+        },
+        {
+          "longitude": 16.73871,
+          "latitude": 24.92389
+        },
+        {
+          "longitude": 24.08025,
+          "latitude": 24.92389
+        }
+      ],
+      "editor.pixelCountrySeries.EG": [
+        {
+          "longitude": 31.4218,
+          "latitude": 31.39118
+        },
+        {
+          "longitude": 31.4218,
+          "latitude": 24.92389
+        }
+      ],
+      "editor.pixelCountrySeries.SA": [
+        {
+          "longitude": 38.76334,
+          "latitude": 31.39118
+        },
+        {
+          "longitude": 38.76334,
+          "latitude": 24.92389
+        },
+        {
+          "longitude": 46.10488,
+          "latitude": 24.92389
+        },
+        {
+          "longitude": 46.10488,
+          "latitude": 18.09903
+        }
+      ],
+      "editor.pixelCountrySeries.IQ": [
+        {
+          "longitude": 46.10488,
+          "latitude": 31.39118
+        }
+      ],
+      "editor.pixelCountrySeries.PK": [
+        {
+          "longitude": 68.1295,
+          "latitude": 31.39118
+        },
+        {
+          "longitude": 68.1295,
+          "latitude": 24.92389
+        }
+      ],
+      "editor.pixelCountrySeries.IN": [
+        {
+          "longitude": 75.47104,
+          "latitude": 31.39118
+        },
+        {
+          "longitude": 75.47104,
+          "latitude": 24.92389
+        },
+        {
+          "longitude": 82.81258,
+          "latitude": 24.92389
+        },
+        {
+          "longitude": 75.47104,
+          "latitude": 18.09903
+        },
+        {
+          "longitude": 82.81258,
+          "latitude": 18.09903
+        },
+        {
+          "longitude": 75.47104,
+          "latitude": 10.99806
+        }
+      ],
+      "editor.pixelCountrySeries.EH": [
+        {
+          "longitude": -12.62745,
+          "latitude": 24.92389
+        }
+      ],
+      "editor.pixelCountrySeries.ML": [
+        {
+          "longitude": -5.28591,
+          "latitude": 24.92389
+        },
+        {
+          "longitude": -5.28591,
+          "latitude": 18.09903
+        },
+        {
+          "longitude": 2.05563,
+          "latitude": 18.09903
+        }
+      ],
+      "editor.pixelCountrySeries.BD": [
+        {
+          "longitude": 90.15412,
+          "latitude": 24.92389
+        }
+      ],
+      "editor.pixelCountrySeries.MR": [
+        {
+          "longitude": -12.62745,
+          "latitude": 18.09903
+        }
+      ],
+      "editor.pixelCountrySeries.NE": [
+        {
+          "longitude": 9.39717,
+          "latitude": 18.09903
+        }
+      ],
+      "editor.pixelCountrySeries.TD": [
+        {
+          "longitude": 16.73871,
+          "latitude": 18.09903
+        },
+        {
+          "longitude": 16.73871,
+          "latitude": 10.99806
+        }
+      ],
+      "editor.pixelCountrySeries.SD": [
+        {
+          "longitude": 24.08025,
+          "latitude": 18.09903
+        },
+        {
+          "longitude": 31.4218,
+          "latitude": 18.09903
+        },
+        {
+          "longitude": 24.08025,
+          "latitude": 10.99806
+        },
+        {
+          "longitude": 31.4218,
+          "latitude": 10.99806
+        }
+      ],
+      "editor.pixelCountrySeries.OM": [
+        {
+          "longitude": 53.44642,
+          "latitude": 18.09903
+        }
+      ],
+      "editor.pixelCountrySeries.MM": [
+        {
+          "longitude": 97.49566,
+          "latitude": 18.09903
+        }
+      ],
+      "editor.pixelCountrySeries.LA": [
+        {
+          "longitude": 104.83721,
+          "latitude": 18.09903
+        }
+      ],
+      "editor.pixelCountrySeries.CR": [
+        {
+          "longitude": -86.04286,
+          "latitude": 10.99806
+        }
+      ],
+      "editor.pixelCountrySeries.VE": [
+        {
+          "longitude": -71.35978,
+          "latitude": 10.99806
+        },
+        {
+          "longitude": -64.01824,
+          "latitude": 10.99806
+        }
+      ],
+      "editor.pixelCountrySeries.GN": [
+        {
+          "longitude": -12.62745,
+          "latitude": 10.99806
+        }
+      ],
+      "editor.pixelCountrySeries.BF": [
+        {
+          "longitude": -5.28591,
+          "latitude": 10.99806
+        }
+      ],
+      "editor.pixelCountrySeries.BJ": [
+        {
+          "longitude": 2.05563,
+          "latitude": 10.99806
+        }
+      ],
+      "editor.pixelCountrySeries.NG": [
+        {
+          "longitude": 9.39717,
+          "latitude": 10.99806
+        }
+      ],
+      "editor.pixelCountrySeries.ET": [
+        {
+          "longitude": 38.76334,
+          "latitude": 10.99806
+        }
+      ],
+      "editor.pixelCountrySeries.SO": [
+        {
+          "longitude": 46.10488,
+          "latitude": 10.99806
+        },
+        {
+          "longitude": 46.10488,
+          "latitude": 3.72206
+        }
+      ],
+      "editor.pixelCountrySeries.KH": [
+        {
+          "longitude": 104.83721,
+          "latitude": 10.99806
+        }
+      ],
+      "editor.pixelCountrySeries.CO": [
+        {
+          "longitude": -71.35978,
+          "latitude": 3.72206
+        }
+      ],
+      "editor.pixelCountrySeries.BR": [
+        {
+          "longitude": -64.01824,
+          "latitude": 3.72206
+        },
+        {
+          "longitude": -64.01824,
+          "latitude": -3.61446
+        },
+        {
+          "longitude": -56.6767,
+          "latitude": -3.61446
+        },
+        {
+          "longitude": -49.33516,
+          "latitude": -3.61446
+        },
+        {
+          "longitude": -41.99361,
+          "latitude": -3.61446
+        },
+        {
+          "longitude": -64.01824,
+          "latitude": -10.89219
+        },
+        {
+          "longitude": -56.6767,
+          "latitude": -10.89219
+        },
+        {
+          "longitude": -49.33516,
+          "latitude": -10.89219
+        },
+        {
+          "longitude": -41.99361,
+          "latitude": -10.89219
+        },
+        {
+          "longitude": -56.6767,
+          "latitude": -17.99651
+        },
+        {
+          "longitude": -49.33516,
+          "latitude": -17.99651
+        },
+        {
+          "longitude": -41.99361,
+          "latitude": -17.99651
+        },
+        {
+          "longitude": -49.33516,
+          "latitude": -24.82607
+        }
+      ],
+      "editor.pixelCountrySeries.SR": [
+        {
+          "longitude": -56.6767,
+          "latitude": 3.72206
+        }
+      ],
+      "editor.pixelCountrySeries.CM": [
+        {
+          "longitude": 9.39717,
+          "latitude": 3.72206
+        }
+      ],
+      "editor.pixelCountrySeries.CG": [
+        {
+          "longitude": 16.73871,
+          "latitude": 3.72206
+        }
+      ],
+      "editor.pixelCountrySeries.CD": [
+        {
+          "longitude": 24.08025,
+          "latitude": 3.72206
+        },
+        {
+          "longitude": 16.73871,
+          "latitude": -3.61446
+        },
+        {
+          "longitude": 24.08025,
+          "latitude": -3.61446
+        },
+        {
+          "longitude": 24.08025,
+          "latitude": -10.89219
+        }
+      ],
+      "editor.pixelCountrySeries.UG": [
+        {
+          "longitude": 31.4218,
+          "latitude": 3.72206
+        }
+      ],
+      "editor.pixelCountrySeries.KE": [
+        {
+          "longitude": 38.76334,
+          "latitude": 3.72206
+        },
+        {
+          "longitude": 38.76334,
+          "latitude": -3.61446
+        }
+      ],
+      "editor.pixelCountrySeries.ID": [
+        {
+          "longitude": 97.49566,
+          "latitude": 3.72206
+        },
+        {
+          "longitude": 104.83721,
+          "latitude": -3.61446
+        },
+        {
+          "longitude": 119.52029,
+          "latitude": -3.61446
+        },
+        {
+          "longitude": 134.20337,
+          "latitude": -3.61446
+        }
+      ],
+      "editor.pixelCountrySeries.EC": [
+        {
+          "longitude": -78.70132,
+          "latitude": -3.61446
+        }
+      ],
+      "editor.pixelCountrySeries.PE": [
+        {
+          "longitude": -71.35978,
+          "latitude": -3.61446
+        },
+        {
+          "longitude": -71.35978,
+          "latitude": -10.89219
+        }
+      ],
+      "editor.pixelCountrySeries.TZ": [
+        {
+          "longitude": 31.4218,
+          "latitude": -3.61446
+        }
+      ],
+      "editor.pixelCountrySeries.PG": [
+        {
+          "longitude": 141.54491,
+          "latitude": -3.61446
+        }
+      ],
+      "editor.pixelCountrySeries.AO": [
+        {
+          "longitude": 16.73871,
+          "latitude": -10.89219
+        }
+      ],
+      "editor.pixelCountrySeries.ZM": [
+        {
+          "longitude": 31.4218,
+          "latitude": -10.89219
+        }
+      ],
+      "editor.pixelCountrySeries.MZ": [
+        {
+          "longitude": 38.76334,
+          "latitude": -10.89219
+        }
+      ],
+      "editor.pixelCountrySeries.AU": [
+        {
+          "longitude": 141.54491,
+          "latitude": -10.89219
+        },
+        {
+          "longitude": 126.86183,
+          "latitude": -17.99651
+        },
+        {
+          "longitude": 134.20337,
+          "latitude": -17.99651
+        },
+        {
+          "longitude": 141.54491,
+          "latitude": -17.99651
+        },
+        {
+          "longitude": 119.52029,
+          "latitude": -24.82607
+        },
+        {
+          "longitude": 126.86183,
+          "latitude": -24.82607
+        },
+        {
+          "longitude": 134.20337,
+          "latitude": -24.82607
+        },
+        {
+          "longitude": 141.54491,
+          "latitude": -24.82607
+        },
+        {
+          "longitude": 148.88645,
+          "latitude": -24.82607
+        },
+        {
+          "longitude": 119.52029,
+          "latitude": -31.29909
+        },
+        {
+          "longitude": 126.86183,
+          "latitude": -31.29909
+        },
+        {
+          "longitude": 134.20337,
+          "latitude": -31.29909
+        },
+        {
+          "longitude": 141.54491,
+          "latitude": -31.29909
+        },
+        {
+          "longitude": 148.88645,
+          "latitude": -31.29909
+        },
+        {
+          "longitude": 141.54491,
+          "latitude": -37.35646
+        },
+        {
+          "longitude": 148.88645,
+          "latitude": -37.35646
+        }
+      ],
+      "editor.pixelCountrySeries.BO": [
+        {
+          "longitude": -64.01824,
+          "latitude": -17.99651
+        }
+      ],
+      "editor.pixelCountrySeries.NA": [
+        {
+          "longitude": 16.73871,
+          "latitude": -17.99651
+        },
+        {
+          "longitude": 16.73871,
+          "latitude": -24.82607
+        }
+      ],
+      "editor.pixelCountrySeries.BW": [
+        {
+          "longitude": 24.08025,
+          "latitude": -17.99651
+        },
+        {
+          "longitude": 24.08025,
+          "latitude": -24.82607
+        }
+      ],
+      "editor.pixelCountrySeries.ZW": [
+        {
+          "longitude": 31.4218,
+          "latitude": -17.99651
+        }
+      ],
+      "editor.pixelCountrySeries.MG": [
+        {
+          "longitude": 46.10488,
+          "latitude": -17.99651
+        },
+        {
+          "longitude": 46.10488,
+          "latitude": -24.82607
+        }
+      ],
+      "editor.pixelCountrySeries.AR": [
+        {
+          "longitude": -64.01824,
+          "latitude": -24.82607
+        },
+        {
+          "longitude": -64.01824,
+          "latitude": -31.29909
+        },
+        {
+          "longitude": -71.35978,
+          "latitude": -37.35646
+        },
+        {
+          "longitude": -64.01824,
+          "latitude": -37.35646
+        },
+        {
+          "longitude": -71.35978,
+          "latitude": -42.96185
+        },
+        {
+          "longitude": -71.35978,
+          "latitude": -48.09949
+        }
+      ],
+      "editor.pixelCountrySeries.PY": [
+        {
+          "longitude": -56.6767,
+          "latitude": -24.82607
+        }
+      ],
+      "editor.pixelCountrySeries.ZA": [
+        {
+          "longitude": 31.4218,
+          "latitude": -24.82607
+        },
+        {
+          "longitude": 24.08025,
+          "latitude": -31.29909
+        }
+      ],
+      "editor.pixelCountrySeries.CL": [
+        {
+          "longitude": -71.35978,
+          "latitude": -31.29909
+        },
+        {
+          "longitude": -71.35978,
+          "latitude": -52.77061
+        }
+      ],
+      "editor.pixelCountrySeries.UY": [
+        {
+          "longitude": -56.6767,
+          "latitude": -31.29909
+        }
+      ],
+      "editor.pixelCountrySeries.NZ": [
+        {
+          "longitude": 170.91107,
+          "latitude": -42.96185
+        }
+      ]
+    }
+  }
+  
