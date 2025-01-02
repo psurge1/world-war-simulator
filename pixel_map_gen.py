@@ -99,7 +99,7 @@ def create_img(points: dict[str, list[tuple[int, int]]], country_color_code: dic
             if map_x != -1:
                 # image.putpixel((scaled_x, scaled_y), color)
                 shape = [(map_x, map_y), (map_x + pixel_size, map_y + pixel_size)]
-                image1.rectangle(shape, fill = color, outline=(0,255,0))
+                image1.rectangle(shape, fill = color)
             else:
                 duplicate_count += 1
 
