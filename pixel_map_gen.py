@@ -3,6 +3,7 @@ import json
 from PIL import Image, ImageDraw
 
 from utils import constants, scale
+from random import randint
 
 
 
@@ -25,6 +26,7 @@ def gen_map(json_path: str, pixel_size: int) -> Image:
     # print(country_abbreviation_dict)
     num_points = 0
     country_points: dict[str, list[dict[str, str]]] = dict()
+    country_color_code: dict[str, tuple[int]] = dict()
     for country_abbreviation in country_abbreviation_dict.keys():
         s = map_details["data"].get(f"editor.pixelCountrySeries.{country_abbreviation}", "")
         if country_abbreviation not in country_points.keys():
@@ -32,10 +34,12 @@ def gen_map(json_path: str, pixel_size: int) -> Image:
         for point in s:
             num_points+=1
             country_points[country_abbreviation].append((float(point['longitude']), float(point['latitude'])))
+        
+        country_color_code[country_abbreviation] = (randint(0, 255), randint(0, 255), randint(0, 255))
         # print(country_abbreviation_dict[country_abbreviation], s)
     print(f"Number of Points: {num_points}")
     
-    return create_img(country_points, pixel_size, block_width)
+    return create_img(country_points, country_color_code, pixel_size, block_width)
     
 
 
@@ -65,7 +69,7 @@ def grid_scale(x_value, y_value, x_offset=1, y_offset=1):
 
 
 from PIL import Image, ImageDraw
-def create_img(points: dict[str, list[tuple[int, int]]], pixel_size: int, block_width: float) -> Image:
+def create_img(points: dict[str, list[tuple[int, int]]], country_color_code: dict[str, tuple[int]], pixel_size: int, block_width: float) -> Image:
     lonlatwidth = constants.MAX_LONG.value - constants.MIN_LONG.value
     lonlatheight = constants.MAX_LAT.value - constants.MIN_LAT.value
 
@@ -89,9 +93,10 @@ def create_img(points: dict[str, list[tuple[int, int]]], pixel_size: int, block_
             scaled_x = int(scale(0, width, 0, 2 * constants.MAX_LONG.value * constants.COORD_SCALING_MAGNITUDE.value, (x + constants.MAX_LONG.value) * constants.COORD_SCALING_MAGNITUDE.value))
             scaled_y = int(scale(0, height, 0, 2 * constants.MAX_LAT.value * constants.COORD_SCALING_MAGNITUDE.value, (-y + constants.MAX_LAT.value) * constants.COORD_SCALING_MAGNITUDE.value))
             map_x, map_y = grid_scale(scaled_x, scaled_y, x_offset=pixel_size, y_offset=pixel_size)
+            
+            color = country_color_code[country]
+            
             if map_x != -1:
-
-                color = (map_x, map_y, 0) 
                 # image.putpixel((scaled_x, scaled_y), color)
                 shape = [(map_x, map_y), (map_x + pixel_size, map_y + pixel_size)]
                 image1.rectangle(shape, fill = color, outline=(0,255,0))
@@ -128,9 +133,10 @@ def save_map(json_path: str, pixel_width: int, save_path: str, extension: str = 
 
 
 if __name__ == '__main__':
-    save_map("assets/maps_4.json", 4, "map_4_pixwidth_4")
-    save_map("assets/maps_3.json", 4, "map_3_pixwidth_4")
-    save_map("assets/maps_3.json", 3, "map_3_pixwidth_3")
-    save_map("assets/maps_2.json", 4, "map_2_pixwidth_4")
-    save_map("assets/maps_2.json", 3, "map_2_pixwidth_3")
+    # save_map("assets/maps_4.json", 4, "maps/map_4_pixwidth_4")
+    # save_map("assets/maps_3.json", 4, "maps/map_3_pixwidth_4")
+    # save_map("assets/maps_3.json", 3, "maps/map_3_pixwidth_3")
+    # save_map("assets/maps_2.json", 4, "maps/map_2_pixwidth_4")
+    # save_map("assets/maps_2.json", 3, "maps/map_2_pixwidth_3")
+    # save_map("assets/maps_2.json", 2, "maps/map_2_pixwidth_2")
     save_map("assets/maps_2.json", 2, "map_2_pixwidth_2")
