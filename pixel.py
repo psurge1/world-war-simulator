@@ -1,5 +1,5 @@
 class Pixel:
-    def __init__(self, x:int = 0, y:int = 0, country:str = "NaN", color:tuple[int] = (0, 0, 0)):
+    def __init__(self, x:int, y:int, country:str = "", color:tuple[int] = (0, 0, 255)):
         self._x = x
         self._y = y
         self._country = country
@@ -36,3 +36,6 @@ class Pixel:
     @color.setter
     def color(self, value):
         self._color = value
+    
+    def __str__(self):
+        return f"[({self.x}, {self.y}) {self.country} {self.color}"

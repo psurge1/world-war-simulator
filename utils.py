@@ -7,6 +7,8 @@ class constants(Enum):
     MIN_LONG = -180
     MAX_LONG = 180
     COORD_SCALING_MAGNITUDE = 10**5
+    PIXEL_WIDTH = 2
+    OCEAN_COLOR = (29,162,216)
 
 
 def scale(scale_min, scale_max, value_min, value_max, value):
