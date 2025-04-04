@@ -6,8 +6,7 @@ import utils
 from utils import constants
 from filter import filter as fl
 
-from pixel_map_gen_old import save_map_old
-
+from past_tries.pixel_map_gen_old import save_map_old
 
 
 
@@ -86,17 +85,79 @@ def gen_map(json_path: str, pixel_size: int, width: int = 1000) -> tuple[dict[st
 def create_img(world_map_matrix: list[list[Pixel]], pixel_size: int, width: int, height: int, country_color_code: dict[str, tuple[int]]) -> tuple[Image, list[list[Pixel]]]:
     image = Image.new("RGB", (width, height))
     image1 = ImageDraw.Draw(image)
-    IN_conquered = ["PK", "BD", "AF", "LK"]
-    JP_conquered = ["KP", "KR", "TW"]
+
+    # TODO: Delete the following dict
+    # conquered = {
+    #     "PK" : "IN",
+    #     "BD" : "IN",
+    #     "AF" : "IN",
+    #     "LK" : "IN",
+        
+    #     "KP" : "JP",
+    #     "KR" : "JP",
+    #     "TW" : "JP",
+    #     "VN" : "JP",
+    #     "LA" : "JP",
+    #     "KH" : "JP",
+    #     "MM" : "JP",
+    #     "MY" : "JP",
+    #     "ID" : "JP",
+    #     "PH" : "JP",
+    #     "PG" : "JP",
+    #     "TL" : "JP",
+    #     "AU" : "JP",
+    #     "NZ" : "JP",
+    #     "HK" : "JP",
+    #     "MO" : "JP",
+
+    #     "AM" : "RU",
+    #     "LT" : "RU",
+    #     "LV" : "RU",
+    #     "TJ" : "RU",
+    #     "TM" : "RU",
+    #     "KZ" : "RU",
+    #     "AZ" : "RU",
+    #     "EE" : "RU",
+    #     "GE" : "RU",
+    #     "KG" : "RU",
+    #     "UZ" : "RU",
+
+    #     "BY" : "UA",
+    #     "MD" : "UA",
+    #     "PL" : "UA",
+
+    #     "GT" : "MX",
+    #     "BZ" : "MX",
+    #     "SV" : "MX",
+    #     "NI" : "MX",
+    #     "CR" : "MX",
+    #     "CU" : "MX",
+    #     "HN" : "MX",
+
+    #     "PA" : "CO",
+    #     "VE" : "CO",
+    #     "EC" : "CO",
+
+    #     "BO" : "PE",
+    #     "CL" : "PE",
+
+    #     "UY" : "BR",
+
+    #     "PY" : "BR",
+    #     "AR" : "BR",
+
+    #     "EG" : "GB",
+    #     "NG" : "GB",
+    #     "SD" : "GB",
+    #     "ZA" : "GB"
+    # }
 
     for row in range(len(world_map_matrix)):
         for col in range(len(world_map_matrix[row])):
             pix = world_map_matrix[row][col]
             color = pix.color
-            if pix.country in IN_conquered:
-                color = country_color_code["IN"]
-            elif pix.country in JP_conquered:
-                color = country_color_code["JP"]
+            # if pix.country in conquered:
+            #     color = country_color_code[conquered[pix.country]]
             # changed to smaller grid
             # shape = [(pix.x, pix.y), (pix.x + pixel_size, pix.y + pixel_size)]
             # image1.rectangle(shape, fill = pix.color)
@@ -155,7 +216,7 @@ if __name__ == '__main__':
 
     world_map_data = save_map("assets/maps_2.json", constants.PIXEL_WIDTH.value, "map")
     country_abbreviation_dict, country_points, country_color_code, world_image, world_map_matrix = world_map_data
-    world_image.show()
+    # world_image.show()
     # dfs(0, 0, "", world_matrix, set())
     
     # im2, mat2 = create_img(world_matrix, constants.PIXEL_WIDTH.value, 1000, 500)
