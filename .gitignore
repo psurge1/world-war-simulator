@@ -1,6 +1,10 @@
 __pycache__/*
+*/__pycache__/*
 
 gebco_2024/*
 past_tries/*
 
 althist*.png
+cpp/*
+
+extra_files/*

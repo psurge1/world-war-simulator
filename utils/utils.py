@@ -12,9 +12,13 @@ class constants(Enum):
 
 
 def scale(scale_min, scale_max, value_min, value_max, value):
+    """ Akin to the cpp map function.
+    """
     return (value - value_min) / (value_max - value_min) * (scale_max - scale_min) + scale_min
 
 def read_json_as_dict(file_path: str):
+    """ Read json from a file and convert it into a python dict.
+    """
     file_contents = ""
     with open(file_path, 'r') as f:
         file_contents = f.read()

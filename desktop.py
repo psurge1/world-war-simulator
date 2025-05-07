@@ -1,0 +1,239 @@
+from utils.pixel_map_gen import gen_map, save_map, apply_adjacency
+from utils.utils import constants
+from models.country import Country
+from models.pixel import Pixel
+from sys import argv
+# import copy
+
+import numpy as np
+
+import pygame
+
+import random
+
+# import multiprocessing # processes
+# import threading # threads
+
+conquered_count = 0
+matrix_one_is_main = True
+
+def abs(v: int):
+    if v < 0:
+        return -v
+    return v
+
+
+def time_step(new_map:list[list[Pixel]], old_map:list[list[Pixel]], countries:dict[str, Country]) -> None:
+    """ Cellular automata function.
+        Applies a set of CA rules to a world map matrix.
+
+        Ruleset 1:
+            1) If water, maintain water state and skip the rest of the steps
+            2) Increase the power of this cell by the amount of adjacent cells of the same country
+            3) Increase the power of this cell by the country's power
+                - Determined by:
+                    - number of pixels, population, military power, economy, etc.
+            4) Optional:
+                - Cannot be attacked by allied country pixels
+                - Can conquer water (territorial waters)
+            5) Recieve attacks form adjacent cells
+                - If power goes below zero, change country allegiance to most powerful attacker
+    """
+
+    # O(Countries)
+    for country in countries.keys():
+        num_conflicts = len(countries[country].conflicts)
+        countries[country].conflicts_tracker = 1 if num_conflicts < 1 else num_conflicts
+        countries[country].conflicts = set()
+    
+    # Iterate over every pixel
+    # O(W*H)
+    for y in range(len(old_map)):
+        for x in range(len(old_map[y])):
+            original_pixel = old_map[y][x]
+            original_pixel.cooldown -= 1
+
+            if original_pixel.cooldown > 0:
+                new_map[y][x].updateWith(original_pixel)
+                continue
+            else:
+                original_pixel.cooldown = original_pixel.cooldown_cap
+
+
+            # Apply ruleset to pixel
+            country_ref = original_pixel.country
+            if country_ref is None or country_ref.abbreviation == "":
+                # 1) If water
+                new_map[y][x].updateWith(original_pixel)
+            else:
+                power_divisor = country_ref.conflicts_tracker if country_ref.conflicts_tracker > 0 else 1
+                power = country_ref.power * power_divisor
+
+                # country_ref.power *= 0.99
+                for pix in original_pixel.adjacent_pixels:
+                    pix_country_ref = pix.country
+                    if pix_country_ref is None or pix_country_ref.abbreviation == "":
+                        continue
+                    if country_ref.abbreviation == pix_country_ref.abbreviation:
+                        power += country_ref.connection_power
+                
+                is_conquered = False
+                pixl_choice = None
+                for pix in original_pixel.adjacent_pixels:
+                    pix_country_ref = pix.country
+                    if pix_country_ref is None or pix_country_ref.abbreviation == "":
+                        continue
+                    if country_ref.abbreviation != pix_country_ref.abbreviation:
+                        power -= pix_country_ref.power
+                        if power <= 0:
+                            pixl_choice = pix
+                            break
+                            
+
+                if pixl_choice != None:
+                    power_diff = country_ref.power - pixl_choice.country.power
+                    abs_power_diff = abs(power_diff)
+                    if random.randint(0, abs_power_diff) > abs_power_diff // 2:
+                        country_ref.power -= 1
+                        if country_ref.power < 1:
+                            country_ref.power = 1
+                        pixl_choice.country.power += 1
+                        
+                        new_map[y][x].country = pixl_choice.country
+                        global conquered_count
+                        conquered_count += 1
+                    else:
+                        new_map[y][x].updateWith(original_pixel)
+                else:
+                    new_map[y][x].updateWith(original_pixel)
+            
+
+
+def draw_map(screen, new_world_map_matrix, draw_water=True, old_world_map_matrix=None):
+    if old_world_map_matrix != None:
+        assert len(old_world_map_matrix) == len(new_world_map_matrix)
+        assert len(old_world_map_matrix) > 0
+        assert len(old_world_map_matrix[0]) == len(new_world_map_matrix[0])
+
+    rect = pygame.Rect(0, 0, game_pixel_width, game_pixel_width)
+    
+    for y in range(len(new_world_map_matrix)):
+        for x in range(len(new_world_map_matrix[y])):
+            pxl = new_world_map_matrix[y][x]
+
+            if not draw_water and (pxl.country is None or pxl.country.abbreviation == ""):
+                continue
+            elif old_world_map_matrix != None and pxl.country == old_world_map_matrix[y][x].country:
+                continue
+
+            rect.x = pxl.x * game_pixel_width
+            rect.y = pxl.y * game_pixel_width
+            pygame.draw.rect(
+                screen,
+                (0, 0, 0) if pxl.country is None else pxl.country.color,
+                rect
+                )
+
+def draw_map2(screen, world_map_matrix, draw_water=True):
+    height = len(world_map_matrix)
+    assert height > 0
+    width = len(world_map_matrix[0])
+    buffer_surface = pygame.Surface((width, height))
+    pixel_array = np.zeros((width, height, 3), dtype=np.uint8)
+    for y in range(height):
+        for x in range(width):
+            pxl = world_map_matrix[y][x]
+            pixel_array[x, y] = (0, 0, 0) if pxl.country is None else pxl.country.color
+    
+    pygame.surfarray.blit_array(buffer_surface, pixel_array)
+    screen.blit(pygame.transform.scale(buffer_surface, screen.get_size()), (0, 0))
+
+
+if __name__ == '__main__':
+    if (len(argv) == 2):
+        pixel_width = int(argv[1])
+        map_choice = 2
+    elif (len(argv) == 3):
+        pixel_width = int(argv[1])
+        map_choice = int(argv[2])
+        if (map_choice not in {2, 3, 4, 8, 25}):
+            print("map choice must be one of: 2, 3, 4, 8, 25")
+            map_choice = 2
+    else:
+        pixel_width = 2
+        map_choice = 2
+    
+    
+    # result = save_map(f"assets/maps_{map_choice}.json", pixel_width, f"map")
+    result = gen_map(f"assets/maps_{map_choice}.json", pixel_width)
+    world_map_matrix_one = result[0]
+    countries = result[1]
+    country_points = result[2]
+    world_image = result[3]
+    
+    width = len(world_map_matrix_one[0])
+    height = len(world_map_matrix_one)
+    game_pixel_width = 3
+
+    # print(world_map_matrix[height//4][width//4])
+    # print(world_map_matrix[0][0])
+
+    # world_image.show()
+
+    ### TODO: power should update (more power as more land is conquered), the fewer the number of conflicts, the more power a country has
+    for country in countries.keys():
+        # countries[country].power = len(country_points[country])
+        countries[country].power = (random.randint(0, len(country_points[country])) + 1)
+        # countries[country].power = abs(1000 - random.randint(0, len(country_points[country])))
+
+    # for country in countries.keys():
+    #     print(f"{country}: {countries[country].power}")
+
+    world_map_matrix_two: list[list[Pixel | None]] = [[ None for _ in range(len(world_map_matrix_one[i]))] for i in range(len(world_map_matrix_one))]
+    for y in range(len(world_map_matrix_one)):
+        for x in range(len(world_map_matrix_one[y])):
+            world_map_matrix_two[y][x] = Pixel.copyPixel(world_map_matrix_one[y][x])
+    apply_adjacency(world_map_matrix_two)
+
+
+    pygame.init()
+    screen = pygame.display.set_mode((width * game_pixel_width, height * game_pixel_width))
+    clock = pygame.time.Clock()
+
+    draw_map(screen, world_map_matrix_one, True)
+    # new_world_map_matrix = world_map_matrix
+
+    running = True
+    
+    while running:
+        for event in pygame.event.get():
+            # print(event)
+            if event.type == pygame.QUIT:
+                running = False
+        
+    #     # mouse_x, mouse_y = pygame.mouse.get_pos()
+    #     # cell_x = mouse_x
+    #     # cell_y = mouse_y
+        # world_map_matrix_two = time_step(world_map_matrix_one, countries)
+        # draw_map(screen, world_map_matrix_two, False, old_world_map_matrix=world_map_matrix_one)
+        # world_map_matrix_one = world_map_matrix_two
+
+        
+        if matrix_one_is_main:
+            time_step(world_map_matrix_two, world_map_matrix_one, countries)
+            draw_map(screen, world_map_matrix_two, False, old_world_map_matrix=world_map_matrix_one)
+            matrix_one_is_main = False
+        else:
+            time_step(world_map_matrix_one, world_map_matrix_two, countries)
+            draw_map(screen, world_map_matrix_one, False, old_world_map_matrix=world_map_matrix_two)
+            matrix_one_is_main = True
+
+        
+        # print(f"CONQUERED: {conquered_count}")
+
+        pygame.display.flip()
+        clock.tick(60)
+        print(f"FPS: {clock.get_fps():.2f}")
+        # print(len(world_map_matrix), len(world_map_matrix[0]))
+        
+    pygame.quit()
