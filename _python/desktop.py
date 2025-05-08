@@ -2,6 +2,8 @@ from utils.pixel_map_gen import gen_map, save_map, apply_adjacency
 from utils.utils import constants
 from models.country import Country
 from models.pixel import Pixel
+from models.boat import Boat
+from models.directions import Direction
 from sys import argv
 # import copy
 
@@ -23,7 +25,7 @@ def abs(v: int):
     return v
 
 
-def time_step(new_map:list[list[Pixel]], old_map:list[list[Pixel]], countries:dict[str, Country]) -> None:
+def time_step(new_map:list[list[Pixel]], old_map:list[list[Pixel]], countries:dict[str, Country], boats:list[Boat]) -> None:
     """ Cellular automata function.
         Applies a set of CA rules to a world map matrix.
 
@@ -70,9 +72,13 @@ def time_step(new_map:list[list[Pixel]], old_map:list[list[Pixel]], countries:di
                 power = country_ref.power * power_divisor
 
                 # country_ref.power *= 0.99
+                ds = [Direction.UP, Direction.RIGHT, Direction.DOWN, Direction.LEFT]
                 for pix in original_pixel.adjacent_pixels:
                     pix_country_ref = pix.country
                     if pix_country_ref is None or pix_country_ref.abbreviation == "":
+                        if original_pixel.can_build_boat and random.randint(1, 1000) == 1:
+                            boats.append(Boat(original_pixel.country, random.choice(ds), power, pix.x, pix.y, 50, pix.country.color))
+                            original_pixel.can_build_boat = False
                         continue
                     if country_ref.abbreviation == pix_country_ref.abbreviation:
                         power += country_ref.connection_power
@@ -106,10 +112,30 @@ def time_step(new_map:list[list[Pixel]], old_map:list[list[Pixel]], countries:di
                         new_map[y][x].updateWith(original_pixel)
                 else:
                     new_map[y][x].updateWith(original_pixel)
-            
+    
+    x_inc = [0, 1, 0, -1]
+    y_inc = [-1, 0, 1, 0]
+    for b in boats:
+        b.x += x_inc[b.direction.value - 1]
+        b.y += y_inc[b.direction.value - 1]
+        if b.y < len(new_map) and b.x < len(new_map[b.y]):
+            pixel_occupied_by_boat = new_map[b.y][b.x]
+            abbv = pixel_occupied_by_boat.country.abbreviation
+            if abbv == "":
+                b.lifespan -= 1
+            elif abbv == b.country.abbreviation:
+                b.lifespan = 0
+            else:
+                # another country
+                # pass
+                new_map[b.y][b.x].country = b.country
+                b.lifespan = 0
+        else:
+            b.lifespan = 0
+    boats[:] = [b for b in boats if b.lifespan > 0]
 
 
-def draw_map(screen, new_world_map_matrix, draw_water=True, old_world_map_matrix=None):
+def draw_map(screen, new_world_map_matrix, boats, draw_water=True, old_world_map_matrix=None):
     if old_world_map_matrix != None:
         assert len(old_world_map_matrix) == len(new_world_map_matrix)
         assert len(old_world_map_matrix) > 0
@@ -123,14 +149,25 @@ def draw_map(screen, new_world_map_matrix, draw_water=True, old_world_map_matrix
 
             if not draw_water and (pxl.country is None or pxl.country.abbreviation == ""):
                 continue
-            elif old_world_map_matrix != None and pxl.country == old_world_map_matrix[y][x].country:
-                continue
+            # elif old_world_map_matrix != None and pxl.country == old_world_map_matrix[y][x].country:
+            #     continue
 
             rect.x = pxl.x * game_pixel_width
             rect.y = pxl.y * game_pixel_width
             pygame.draw.rect(
                 screen,
                 (0, 0, 0) if pxl.country is None else pxl.country.color,
+                rect
+                )
+    
+    for b in boats:
+        if b.lifespan > 0:
+            rect.x = b.x * game_pixel_width
+            rect.y = b.y * game_pixel_width
+            pygame.draw.rect(
+                screen,
+                (255, 255, 255),
+                # Boat.color(),
                 rect
                 )
 
@@ -164,8 +201,8 @@ if __name__ == '__main__':
         map_choice = 2
     
     
-    # result = save_map(f"assets/maps_{map_choice}.json", pixel_width, f"map")
-    result = gen_map(f"assets/maps_{map_choice}.json", pixel_width)
+    # result = save_map(f"../assets/maps_{map_choice}.json", pixel_width, f"map")
+    result = gen_map(f"../assets/maps_{map_choice}.json", pixel_width)
     world_map_matrix_one = result[0]
     countries = result[1]
     country_points = result[2]
@@ -181,10 +218,19 @@ if __name__ == '__main__':
     # world_image.show()
 
     ### TODO: power should update (more power as more land is conquered), the fewer the number of conflicts, the more power a country has
+    powers = {
+        "India": 5000,
+        "Japan": 12500
+    }
     for country in countries.keys():
-        # countries[country].power = len(country_points[country])
-        countries[country].power = (random.randint(0, len(country_points[country])) + 1)
-        # countries[country].power = abs(1000 - random.randint(0, len(country_points[country])))
+        if countries[country].name in powers.keys():
+            countries[country].power = powers[countries[country].name]
+        else:
+            # countries[country].power = len(country_points[country])
+            # countries[country].power = (random.randint(0, len(country_points[country])) + 1)
+            # countries[country].power = random.randint(0, 1000)
+            countries[country].power = 100 + random.randint(0, 25)
+            # countries[country].power = abs(1000 - random.randint(0, len(country_points[country])))
 
     # for country in countries.keys():
     #     print(f"{country}: {countries[country].power}")
@@ -195,38 +241,39 @@ if __name__ == '__main__':
             world_map_matrix_two[y][x] = Pixel.copyPixel(world_map_matrix_one[y][x])
     apply_adjacency(world_map_matrix_two)
 
+    boats: list[Boat] = []
+
 
     pygame.init()
     screen = pygame.display.set_mode((width * game_pixel_width, height * game_pixel_width))
     clock = pygame.time.Clock()
 
-    draw_map(screen, world_map_matrix_one, True)
+    draw_map(screen, world_map_matrix_one, boats, False)
     # new_world_map_matrix = world_map_matrix
 
     running = True
+    pause = False
+
     
     while running:
         for event in pygame.event.get():
             # print(event)
             if event.type == pygame.QUIT:
                 running = False
-        
-    #     # mouse_x, mouse_y = pygame.mouse.get_pos()
-    #     # cell_x = mouse_x
-    #     # cell_y = mouse_y
-        # world_map_matrix_two = time_step(world_map_matrix_one, countries)
-        # draw_map(screen, world_map_matrix_two, False, old_world_map_matrix=world_map_matrix_one)
-        # world_map_matrix_one = world_map_matrix_two
+            if event.type == pygame.KEYDOWN:
+                pause = not pause
 
-        
-        if matrix_one_is_main:
-            time_step(world_map_matrix_two, world_map_matrix_one, countries)
-            draw_map(screen, world_map_matrix_two, False, old_world_map_matrix=world_map_matrix_one)
-            matrix_one_is_main = False
-        else:
-            time_step(world_map_matrix_one, world_map_matrix_two, countries)
-            draw_map(screen, world_map_matrix_one, False, old_world_map_matrix=world_map_matrix_two)
-            matrix_one_is_main = True
+        if not pause:
+            if matrix_one_is_main:
+                time_step(world_map_matrix_two, world_map_matrix_one, countries, boats)
+                screen.fill((0, 0, 0))
+                draw_map(screen, world_map_matrix_two, boats, False, old_world_map_matrix=world_map_matrix_one)
+                matrix_one_is_main = False
+            else:
+                time_step(world_map_matrix_one, world_map_matrix_two, countries, boats)
+                screen.fill((0, 0, 0))
+                draw_map(screen, world_map_matrix_one, boats, False, old_world_map_matrix=world_map_matrix_two)
+                matrix_one_is_main = True
 
         
         # print(f"CONQUERED: {conquered_count}")

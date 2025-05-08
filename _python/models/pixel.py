@@ -28,7 +28,7 @@ class BasePixel:
         return False
 
 class Pixel(BasePixel):
-    def __init__(self, x:int, y:int, country:Country = None, adjacent_pixels:list = None, cooldown:int = 0):
+    def __init__(self, x:int, y:int, country:Country = None, adjacent_pixels:list = None, cooldown:int = 0, can_build_boat:bool = True):
         super().__init__(x, y)
         self._country = country
         # self._country_abbreviation = country_abbreviation
@@ -36,10 +36,11 @@ class Pixel(BasePixel):
         self._adjacent_pixels: list[Pixel] = [] if adjacent_pixels is None else adjacent_pixels
         self._cooldown_cap = cooldown
         self._cooldown = cooldown
+        self._can_build_boat = can_build_boat
     
     @staticmethod
     def copyPixel(pixel):
-        return Pixel(pixel.x, pixel.y, pixel.country, [], pixel.cooldown)
+        return Pixel(pixel.x, pixel.y, pixel.country, [], pixel.cooldown, pixel.can_build_boat)
     
     @property
     def country(self):
@@ -88,6 +89,14 @@ class Pixel(BasePixel):
     @adjacent_pixels.setter
     def adjacent_pixels(self, value: list):
         self._adjacent_pixels = value
+    
+    @property
+    def can_build_boat(self):
+        return self._can_build_boat
+    
+    @can_build_boat.setter
+    def can_build_boat(self, value:bool):
+        self._can_build_boat = value
 
     def updateWith(self, pixel):
         self.x = pixel.x
@@ -95,6 +104,7 @@ class Pixel(BasePixel):
         self.country = pixel.country
         self.cooldown_cap = pixel.cooldown_cap
         self.cooldown = pixel.cooldown
+        self.can_build_boat = pixel.can_build_boat
     
     def add_adjacent_pixel(self, pixel):
         self.adjacent_pixels.append(pixel)
