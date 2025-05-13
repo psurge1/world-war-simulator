@@ -38,10 +38,6 @@ class Pixel(BasePixel):
         self._cooldown = cooldown
         self._can_build_boat = can_build_boat
     
-    @staticmethod
-    def copyPixel(pixel):
-        return Pixel(pixel.x, pixel.y, pixel.country, [], pixel.cooldown, pixel.can_build_boat)
-    
     @property
     def country(self):
         return self._country
@@ -98,6 +94,10 @@ class Pixel(BasePixel):
     def can_build_boat(self, value:bool):
         self._can_build_boat = value
 
+    @staticmethod
+    def copyPixel(pixel):
+        return Pixel(pixel.x, pixel.y, pixel.country, [], pixel.cooldown, pixel.can_build_boat)
+    
     def updateWith(self, pixel):
         self.x = pixel.x
         self.y = pixel.y

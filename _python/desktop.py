@@ -7,7 +7,7 @@ from models.directions import Direction
 from sys import argv
 # import copy
 
-import numpy as np
+# import numpy as np
 
 import pygame
 
@@ -77,7 +77,7 @@ def time_step(new_map:list[list[Pixel]], old_map:list[list[Pixel]], countries:di
                     pix_country_ref = pix.country
                     if pix_country_ref is None or pix_country_ref.abbreviation == "":
                         if original_pixel.can_build_boat and random.randint(1, 1000) == 1:
-                            boats.append(Boat(original_pixel.country, random.choice(ds), power, pix.x, pix.y, 50, pix.country.color))
+                            boats.append(Boat(original_pixel.country, random.choice(ds), power, pix.x, pix.y, 50))
                             original_pixel.can_build_boat = False
                         continue
                     if country_ref.abbreviation == pix_country_ref.abbreviation:
@@ -171,19 +171,19 @@ def draw_map(screen, new_world_map_matrix, boats, draw_water=True, old_world_map
                 rect
                 )
 
-def draw_map2(screen, world_map_matrix, draw_water=True):
-    height = len(world_map_matrix)
-    assert height > 0
-    width = len(world_map_matrix[0])
-    buffer_surface = pygame.Surface((width, height))
-    pixel_array = np.zeros((width, height, 3), dtype=np.uint8)
-    for y in range(height):
-        for x in range(width):
-            pxl = world_map_matrix[y][x]
-            pixel_array[x, y] = (0, 0, 0) if pxl.country is None else pxl.country.color
+# def draw_map2(screen, world_map_matrix, draw_water=True):
+#     height = len(world_map_matrix)
+#     assert height > 0
+#     width = len(world_map_matrix[0])
+#     buffer_surface = pygame.Surface((width, height))
+#     pixel_array = np.zeros((width, height, 3), dtype=np.uint8)
+#     for y in range(height):
+#         for x in range(width):
+#             pxl = world_map_matrix[y][x]
+#             pixel_array[x, y] = (0, 0, 0) if pxl.country is None else pxl.country.color
     
-    pygame.surfarray.blit_array(buffer_surface, pixel_array)
-    screen.blit(pygame.transform.scale(buffer_surface, screen.get_size()), (0, 0))
+#     pygame.surfarray.blit_array(buffer_surface, pixel_array)
+#     screen.blit(pygame.transform.scale(buffer_surface, screen.get_size()), (0, 0))
 
 
 if __name__ == '__main__':
@@ -201,8 +201,8 @@ if __name__ == '__main__':
         map_choice = 2
     
     
-    # result = save_map(f"../assets/maps_{map_choice}.json", pixel_width, f"map")
-    result = gen_map(f"../assets/maps_{map_choice}.json", pixel_width)
+    # result = save_map(f"../public/assets/maps_{map_choice}.json", pixel_width, f"map")
+    result = gen_map(f"../public/assets/maps_{map_choice}.json", pixel_width)
     world_map_matrix_one = result[0]
     countries = result[1]
     country_points = result[2]
@@ -210,6 +210,8 @@ if __name__ == '__main__':
     
     width = len(world_map_matrix_one[0])
     height = len(world_map_matrix_one)
+    print(f"WIDTH: {width}")
+    print(f"HEIGHT: {height}")
     game_pixel_width = 3
 
     # print(world_map_matrix[height//4][width//4])

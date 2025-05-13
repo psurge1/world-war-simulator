@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "@types/p5": "^1.7.6",
+    "esbuild": "^0.25.4",
+    "p5": "^2.0.1",
+    "typescript": "^5.8.3"
+  }
+}

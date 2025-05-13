@@ -9,3 +9,5 @@ althist*.png
 cpp/*
 
 extra_files/*
+
+node_modules/*

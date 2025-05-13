@@ -2,14 +2,13 @@ from models.country import Country
 from models.directions import Direction
 
 class Boat:
-    def __init__(self, country: Country, direction: Direction, power: int, x: int, y: int, lifespan: int, under_pixel_color: tuple[int, int, int]):
+    def __init__(self, country: Country, direction: Direction, power: int, x: int, y: int, lifespan: int):
         self._country = country
         self._direction = direction
         self._power = power
         self._x = x
         self._y = y
         self._lifespan = lifespan
-        self._under_pixel_color = under_pixel_color
     
     @property
     def country(self) -> Country:
@@ -59,13 +58,6 @@ class Boat:
     def lifespan(self, value:int):
         self._lifespan = value
     
-    @property
-    def under_pixel_color(self):
-        return self._under_pixel_color
-    
-    @under_pixel_color.setter
-    def under_pixel_color(self, value:tuple[int, int, int]):
-        self._under_pixel_color = value
     
     @staticmethod
     def color():
