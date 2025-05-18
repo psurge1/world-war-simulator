@@ -1,14 +1,14 @@
 class Country {
-    name: string;
-    abbreviation: string;
-    color: number[];
-    power: number;
-    connectionPower: number;
-    conflicts: Set<Country>;
-    size: number;
-    conflictsTracker: number;
+    // name: string;
+    // abbreviation: string;
+    // color: number[];
+    // power: number;
+    // connectionPower: number;
+    // conflicts: Set<Country>;
+    // size: number;
+    // conflictsTracker: number;
 
-    constructor(name: string, abbreviation: string, color: number[], power: number, connectionPower: number) {
+    constructor(name, abbreviation, color, power, connectionPower) {
         this.name = name;
         this.abbreviation = abbreviation;
         this.color = color;

@@ -16,6 +16,7 @@ water = Country("", "", constants.OCEAN_COLOR.value, 0, 0)
 
 
 def init_world_matrix(width: int, height: int):
+    # print(width, height)
     world_matrix: list[list[type]] = list()
     for y in range(height):
         row = []
@@ -54,8 +55,8 @@ def gen_map(json_path: str, pixel_size: int, width: int = 1000) -> tuple[list[li
     num_countries = 0
     num_countries_flag = False
 
-    country_points: dict[str, tuple[str, str]] = dict()
-    country_color_code: dict[str, tuple[int]] = dict()
+    # country_points: dict[str, tuple[str, str]] = dict()
+    # country_color_code: dict[str, tuple[int]] = dict()
 
     # changed to smaller grid
     world_map_matrix: list[list[Pixel]] = init_world_matrix(width // pixel_size + 1, height // pixel_size + 1)
@@ -70,13 +71,14 @@ def gen_map(json_path: str, pixel_size: int, width: int = 1000) -> tuple[list[li
             country_abbreviation,
             (randint(0, 255), randint(0, 255), randint(0, 255)),
             )
-        country_color_code[country_abbreviation] = countries[country_abbreviation].color
+        # country_color_code[country_abbreviation] = countries[country_abbreviation].color
+    
     
     filter.reset_points()
     for country_abbreviation in country_abbreviation_dict.keys():
         s = map_details["data"].get(f"editor.pixelCountrySeries.{country_abbreviation}", "")
-        if country_abbreviation not in country_points.keys():
-            country_points[country_abbreviation] = list()
+        # if country_abbreviation not in country_points.keys():
+        #     country_points[country_abbreviation] = list()
         num_countries_flag = True
         for point in s:
             if num_countries_flag:
@@ -87,10 +89,12 @@ def gen_map(json_path: str, pixel_size: int, width: int = 1000) -> tuple[list[li
             scaled_x = int(scale(0, width, 0, 2 * constants.MAX_LONG.value * constants.COORD_SCALING_MAGNITUDE.value, (x + constants.MAX_LONG.value) * constants.COORD_SCALING_MAGNITUDE.value))
             scaled_y = int(scale(0, height, 0, 2 * constants.MAX_LAT.value * constants.COORD_SCALING_MAGNITUDE.value, (-y + constants.MAX_LAT.value) * constants.COORD_SCALING_MAGNITUDE.value))
             map_x, map_y = filter.grid_scale(scaled_x, scaled_y, x_offset=pixel_size, y_offset=pixel_size)
+            out = f"{x},{y},{scaled_x},{scaled_y},{map_x},{map_y}"
+            # print(out)
 
             if map_x != -1:
                 # changed to smaller grid
-                country_points[country_abbreviation].append((map_x // pixel_size, map_y // pixel_size))
+                # country_points[country_abbreviation].append((map_x // pixel_size, map_y // pixel_size))
                 world_map_matrix[map_y // pixel_size][map_x // pixel_size] = Pixel(
                     map_x // pixel_size, 
                     map_y // pixel_size, 
@@ -103,7 +107,8 @@ def gen_map(json_path: str, pixel_size: int, width: int = 1000) -> tuple[list[li
     
     apply_adjacency(world_map_matrix)
     
-    return (world_map_matrix, countries, country_points, create_img(world_map_matrix, pixel_size, width, height)[0])
+    # return (world_map_matrix, countries, country_points, create_img(world_map_matrix, pixel_size, width, height)[0])
+    return (world_map_matrix, countries, create_img(world_map_matrix, pixel_size, width, height)[0])
 
 
 def create_img(world_map_matrix: list[list[Pixel]], pixel_size: int, width: int, height: int) -> tuple[Image, list[list[Pixel]]]:
@@ -174,4 +179,4 @@ if __name__ == '__main__':
 
 
     world_map_data = save_map("assets/maps_2.json", constants.PIXEL_WIDTH.value, "map")
-    world_map_matrix, countries, country_points, world_image = world_map_data
+    world_map_matrix, countries, world_image = world_map_data

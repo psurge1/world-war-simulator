@@ -5,9 +5,8 @@ from models.pixel import Pixel
 from models.boat import Boat
 from models.directions import Direction
 from sys import argv
-# import copy
 
-# import numpy as np
+from utils.filter import filter
 
 import pygame
 
@@ -171,19 +170,58 @@ def draw_map(screen, new_world_map_matrix, boats, draw_water=True, old_world_map
                 rect
                 )
 
-# def draw_map2(screen, world_map_matrix, draw_water=True):
-#     height = len(world_map_matrix)
-#     assert height > 0
-#     width = len(world_map_matrix[0])
-#     buffer_surface = pygame.Surface((width, height))
-#     pixel_array = np.zeros((width, height, 3), dtype=np.uint8)
-#     for y in range(height):
-#         for x in range(width):
-#             pxl = world_map_matrix[y][x]
-#             pixel_array[x, y] = (0, 0, 0) if pxl.country is None else pxl.country.color
-    
-#     pygame.surfarray.blit_array(buffer_surface, pixel_array)
-#     screen.blit(pygame.transform.scale(buffer_surface, screen.get_size()), (0, 0))
+# if __name__ != '__main__':
+#     matrix = []
+#     with open('data.csv', 'r') as f:
+#         for _ in range(21):
+#             row = []
+#             for _ in range(41):
+#                 row.append(None)
+#             matrix.append(row)
+        
+#         lines = f.readlines()
+#         for line in lines:
+#             l = line.strip().split(",")
+#             print(l)
+#             x = int(l[0])
+#             y = int(l[1])
+#             pix_x = int(l[2])
+#             pix_y = int(l[3])
+#             # print(x, pix_x)
+#             # print(y, pix_y)
+#             # assert x == pix_x
+#             # assert y == pix_y
+#             r = int(l[4])
+#             g = int(l[5])
+#             b = int(l[6])
+
+#             matrix[y][x] = (r, g, b)
+#     pygame.init()
+#     game_pixel_width = 25
+#     screen = pygame.display.set_mode((41 * game_pixel_width, 21 * game_pixel_width))
+#     clock = pygame.time.Clock()
+#     running = True
+#     while running:
+#         for event in pygame.event.get():
+#             # print(event)
+#             if event.type == pygame.QUIT:
+#                 running = False
+        
+#         rect = pygame.Rect(0, 0, game_pixel_width, game_pixel_width)
+#         for y in range(len(matrix)):
+#             for x in range(len(matrix[y])):
+#                 pxl = matrix[y][x]
+
+#                 rect.x = x * game_pixel_width
+#                 rect.y = y * game_pixel_width
+#                 pygame.draw.rect(
+#                     screen,
+#                     (0, 0, 0) if pxl is None else pxl,
+#                     rect
+#                     )
+
+#         pygame.display.flip()
+#         clock.tick(60)
 
 
 if __name__ == '__main__':
@@ -205,8 +243,10 @@ if __name__ == '__main__':
     result = gen_map(f"../public/assets/maps_{map_choice}.json", pixel_width)
     world_map_matrix_one = result[0]
     countries = result[1]
-    country_points = result[2]
-    world_image = result[3]
+    # country_points = result[2]
+    world_image = result[2]
+
+    print("number of duplicate pixels: ", filter.get_num_duplicates())
     
     width = len(world_map_matrix_one[0])
     height = len(world_map_matrix_one)
@@ -220,10 +260,9 @@ if __name__ == '__main__':
     # world_image.show()
 
     ### TODO: power should update (more power as more land is conquered), the fewer the number of conflicts, the more power a country has
-    powers = {
-        "India": 5000,
-        "Japan": 12500
-    }
+    powers = dict()
+    # powers["India"] = 5000
+    # powers["Japan"] = 12500
     for country in countries.keys():
         if countries[country].name in powers.keys():
             countries[country].power = powers[countries[country].name]

@@ -1,23 +1,23 @@
-import Country from "./Country";
+import Country from "./Country.js";
 
 class BasePixel {
-    x: number;
-    y: number;
+    // x: number;
+    // y: number;
     
-    constructor(x: number, y: number) {
+    constructor(x, y) {
         this.x = x;
         this.y = y;
     }
 }
 
 class Pixel extends BasePixel {
-    country: Country | null;
-    adjacentPixels: Pixel[];
-    cooldownCap: number;
-    cooldown: number;
-    canBuildBoat: boolean;
+    // country: Country | null;
+    // adjacentPixels: Pixel[];
+    // cooldownCap: number;
+    // cooldown: number;
+    // canBuildBoat: boolean;
     
-    constructor(x: number, y: number, country: Country | null = null, adjacentPixels: Pixel[] = [], cooldown: number = 0, canBuildBoat: boolean = true) {
+    constructor(x, y, country = null, adjacentPixels = [], cooldown = 0, canBuildBoat = true) {
         super(x, y);
         this.country = country;
         this.adjacentPixels = adjacentPixels;
@@ -25,8 +25,11 @@ class Pixel extends BasePixel {
         this.cooldown = cooldown
         this.canBuildBoat = canBuildBoat;
     }
+    // get country() {
+    //     return this.country;
+    // }
 
-    updateWith(pixel: Pixel) {
+    updateWith(pixel) {
         this.x = pixel.x;
         this.y = pixel.y;
         this.country = pixel.country;
@@ -35,11 +38,7 @@ class Pixel extends BasePixel {
         this.canBuildBoat = pixel.canBuildBoat;
     }
 
-    addAdjacentPixel(pixel: Pixel) {
-        this.adjacentPixels.push(pixel);
-    }
-
-    removeAdjacentPixel(pixel: Pixel) {
+    removeAdjacentPixel(pixel) {
         try {
             const index = this.adjacentPixels.indexOf(pixel);
             if (index > -1)
@@ -50,9 +49,14 @@ class Pixel extends BasePixel {
         }
     }
 
+    addAdjacentPixel(pixel) {
+        this.adjacentPixels.push(pixel);
+    }
+
     static copyPixel(pixel) {
         return new Pixel(pixel.x, pixel.y, pixel.country, [], pixel.cooldown, pixel.canBuildBoat);
     }
 }
+
 
 export default Pixel;
