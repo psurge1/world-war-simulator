@@ -429,7 +429,7 @@ export const setup = async () => {
 
 
 async function initGame() {
-    ({worldMapMatrix, countries} = await genMap(`public/assets/maps_${pixelWidthChoice}.json`, pixelScale));
+    ({worldMapMatrix, countries} = await genMap(`./public/assets/maps_${pixelWidthChoice}.json`, pixelScale));
 
     let h = worldMapMatrix.length;
     let w = worldMapMatrix[0].length;
