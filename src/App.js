@@ -410,8 +410,8 @@ export const setup = async () => {
             customGamePixelWidth = pixelWidth;
             customPixelWidthChoice = mapRes;
 
-            console.log("IN: ", customPixelScale, customGamePixelWidth, customPixelWidthChoice);
-            console.log("DEFAULT: ", pixelScale, gamePixelWidth, pixelWidthChoice);
+            // console.log("IN: ", customPixelScale, customGamePixelWidth, customPixelWidthChoice);
+            // console.log("DEFAULT: ", pixelScale, gamePixelWidth, pixelWidthChoice);
 
             pixelScale = customPixelScale;
             gamePixelWidth = customGamePixelWidth;

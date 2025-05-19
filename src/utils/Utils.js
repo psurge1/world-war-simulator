@@ -26,9 +26,17 @@ async function readJsonAsDict(filePath) {
     /*
     Read json from a file and convert it into a python dict.
     */
-    let response = await fetch(filePath);
-    let data = await response.json();
-    return data;
+    try {
+        let response = await fetch(filePath);
+        if (!response.ok) {
+            response = await fetch(window.location.origin + '/' + filePath);
+        }
+        let data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error loading JSON file:', error);
+        throw error;
+    }
 }
 
 function randomInRange(min, max) {
