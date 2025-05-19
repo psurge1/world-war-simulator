@@ -26,7 +26,7 @@ async function readJsonAsDict(filePath) {
     /*
     Read json from a file and convert it into a python dict.
     */
-    let response = await fetch('http://localhost:5500/' + filePath);
+    let response = await fetch(filePath);
     let data = await response.json();
     return data;
 }
