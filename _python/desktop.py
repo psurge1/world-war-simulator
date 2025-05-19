@@ -60,15 +60,19 @@ def time_step(new_map:list[list[Pixel]], old_map:list[list[Pixel]], countries:di
             else:
                 original_pixel.cooldown = original_pixel.cooldown_cap
 
-
+            # print("Cooldown Cap: ", original_pixel.cooldown_cap)
             # Apply ruleset to pixel
             country_ref = original_pixel.country
             if country_ref is None or country_ref.abbreviation == "":
                 # 1) If water
                 new_map[y][x].updateWith(original_pixel)
             else:
+                # TODO: Instead of subtracting by the number of conflicts, subtract by a factor of the total amount of emeny power
+                # (so that it is proprtional to the strength of opponents)
                 power_divisor = country_ref.conflicts_tracker if country_ref.conflicts_tracker > 0 else 1
-                power = country_ref.power * power_divisor
+                power = country_ref.power - power_divisor
+                if power <= 0:
+                    power = 1
 
                 # country_ref.power *= 0.99
                 ds = [Direction.UP, Direction.RIGHT, Direction.DOWN, Direction.LEFT]

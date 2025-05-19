@@ -8,7 +8,7 @@ class Country {
     // size: number;
     // conflictsTracker: number;
 
-    constructor(name, abbreviation, color, power, connectionPower) {
+    constructor(name, abbreviation, color, power, connectionPower=1, numPixels=0) {
         this.name = name;
         this.abbreviation = abbreviation;
         this.color = color;
@@ -18,6 +18,7 @@ class Country {
         this.conflicts = new Set();
         this.size = 0;
         this.conflictsTracker = 1;
+        this.numPixels = numPixels;
     }
 }
 

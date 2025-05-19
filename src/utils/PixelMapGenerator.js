@@ -42,7 +42,6 @@ export function applyAdjacency(matrix) {
 }
 
 export async function genMap(jsonPath, pixelSize, width = 1000) {
-    
     let lonlatwidth = Constants.MAX_LONG - Constants.MIN_LONG;
     let lonlatheight = Constants.MAX_LAT - Constants.MIN_LAT;
     let height = Math.floor(width * lonlatheight/lonlatwidth);
